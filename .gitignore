@@ -1,1 +1,12 @@
 node_modules
+
+# webpack writes its bundles and emitted assets into public/,
+# which is also the directory that gets served
+public/*.bundle.js
+public/*.LICENSE.txt
+public/images/
+public/*.woff
+public/*.woff2
+public/*.ttf
+public/*.eot
+public/*.svg

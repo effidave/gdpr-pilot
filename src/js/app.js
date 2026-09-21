@@ -20,13 +20,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { query, classes } from "min-dom";
 
-import disableModeling from "../customizations/DisableModeling.js";
+import disableModeling from "../customizations/disableModeling.js";
 import DisabledTypeChangeContextPadProvider from "../customizations/contextPadExtension.js";
 
 import diagram from "../../resources/diagram.bpmn";
 import diagram_two_activities from "../../resources/diagram_two_activities.bpmn";
 import confirmForGDPRPath from "../customizations/confirm";
-import diagram_to_test_part from "../../resources/diagram_to_test_part.bpmn";
+import diagram_to_test_part from "../../resources/Diagram_to_test_part.bpmn";
 
 //GDPR compliance pattern
 import consent_to_use_the_data from "../../resources/gdpr_compliance_patterns/consent_to_use_the_data.bpmn";
@@ -68,7 +68,6 @@ import {
   displayDynamicAlert,
   displayDynamicPopUp,
 } from "./support.js";
-import axios from "axios";
 import zeebeModdleDescriptor from "zeebe-bpmn-moddle/resources/zeebe";
 import gdprImage from "../../resources/gdpr_gray.png";
 
@@ -113,7 +112,6 @@ const canvas_col = document.getElementById("canvas_col");
 const survey_col = document.getElementById("survey_col");
 const over_canvas = document.getElementById("over_canvas");
 const edit = document.getElementById("mode");
-const endpoint = "http://localhost:3000";
 
 var elementFactory;
 var modeling;
@@ -237,51 +235,45 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 // end function to load the first diagram
 
-//function to call the API of chatGPT
-//message:the message i want to send to chatGPT
-export async function callChatGpt(message) {
-  const url = "http://localhost:3000/api/call_chat_gpt";
-  const makeRequest = async (retryCount = 0) => {
-    try {
-      const response = await axios.get(url, {
-        params: {
-          message: message,
-          withCredentials: true,
-        },
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-      return response.data;
-    } catch (error) {
-      if (error.response && error.response.status === 429 && retryCount < 5) {
-        // Rate limit error
-        const retryAfter = error.response.headers["retry-after-ms"] || 3000; // Default to 3 seconds if not provided
-        console.log(`Rate limit exceeded. Retrying after ${retryAfter}ms`);
-        if (localStorage.getItem("flag_per_llm") != "true")
-          displayDynamicAlert(
-            "Something went wrong with the LLM predictions. Please try again later.",
-            "danger",
-            3000
-          );
-        await new Promise((resolve) => setTimeout(resolve, retryAfter));
-        return makeRequest(retryCount + 1);
-      } else {
-        // Other errors or max retries exceeded
-        console.error("There was a problem with the request:", error);
-        if (localStorage.getItem("flag_per_llm") != "true")
-          displayDynamicAlert(
-            "Something went wrong with the LLM predictions. Please try again later.",
-            "danger",
-            3000
-          );
-        throw error;
-      }
-    }
-  };
+//function to call the LLM
+//message: the message i want to send to the model
+//in the hosted build this goes to Claude through the artifact runtime,
+//so there is no proxy server and no API key to configure
+let samplePromise;
+function getSample() {
+  if (!samplePromise) {
+    samplePromise =
+      window.claude && window.claude.use
+        ? Promise.resolve(window.claude.use("sample")).catch(() => null)
+        : Promise.resolve(null);
+  }
+  return samplePromise;
+}
 
-  return makeRequest();
+export async function callChatGpt(message) {
+  const sample = await getSample();
+  if (!sample) {
+    if (localStorage.getItem("flag_per_llm") != "true")
+      displayDynamicAlert(
+        "LLM suggestions are unavailable here. You can still answer every question yourself.",
+        "warning",
+        4000
+      );
+    throw new Error("sample capability unavailable");
+  }
+  try {
+    const { text } = await sample(message);
+    return { content: text };
+  } catch (error) {
+    console.error("There was a problem with the request:", error);
+    if (localStorage.getItem("flag_per_llm") != "true")
+      displayDynamicAlert(
+        "Something went wrong with the LLM predictions. Please try again later.",
+        "danger",
+        3000
+      );
+    throw error;
+  }
 }
 
 export function reSet() {
