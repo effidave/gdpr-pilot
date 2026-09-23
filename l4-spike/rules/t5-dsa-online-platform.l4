@@ -1,0 +1,74 @@
+-- ============================================================================
+-- T5 - Digital Services Act: online platform
+-- Instrument : Regulation (EU) 2022/2065 (Digital Services Act)
+--              http://data.europa.eu/eli/reg/2022/2065/oj
+-- Pinpoint   : Art 3(g)(iii), Art 3(i), Art 3(k); Recital 14
+-- Version    : OJ L 277, 27.10.2022, p. 1 (original text) - NOT CHECKED. EUR-Lex was
+--              blocked from the spike environment, so the text below is quoted from
+--              the author's knowledge and must be verified before reliance.
+-- Evaluated  : 2026-09-23
+-- Operative text (UNVERIFIED):
+--   Art 3(g)(iii): a 'hosting' service, consisting of the storage of information
+--     provided by, and at the request of, a recipient of the service;
+--   Art 3(i): 'online platform' means a hosting service that, at the request of a
+--     recipient of the service, stores and disseminates information to the public,
+--     unless that activity is a minor and purely ancillary feature of another
+--     service or a minor functionality of the principal service and, for objective
+--     and technical reasons, cannot be used without that other service, and the
+--     integration of the feature or functionality into the other service is not a
+--     means to circumvent the applicability of this Regulation;
+--   Art 3(k): 'dissemination to the public' means making information available, at
+--     the request of the recipient of the service who provided the information, to
+--     a potentially unlimited number of third parties;
+--   Recital 14 (extract): ... Interpersonal communication services ..., such as
+--     emails or private messaging services, fall outside the scope of the
+--     definition of online platforms as they are used for interpersonal
+--     communication between a finite number of persons determined by the sender
+--     of the communication. However, the obligations ... can apply to services
+--     that allow the making available of information to a potentially unlimited
+--     number of recipients, not determined by the sender of the communication,
+--     such as through public groups or open channels.
+-- Modelling:
+--   * "is a hosting service": a recorded judgement wins; otherwise derived from the
+--     fact "stores user content at the recipient's request".
+--   * "disseminates to the public": a recorded judgement wins; otherwise derived
+--     ONLY in the clear case (public posting => yes). No public posting is NOT
+--     treated as "no", because closed groups with automatic admission can still be
+--     dissemination to the public (Recital 14).
+--   * The ancillary exception is always a judgement input.
+-- ============================================================================
+
+IMPORT prelude
+IMPORT kleene
+
+§ `DSA Art 3(i) and 3(k) - online platform`
+@ref-map dsa-art3 https://eur-lex.europa.eu/eli/reg/2022/2065/oj#art_3
+
+@ref dsa-art3 Art 3(g)(iii)
+GIVEN `hosting service judgement`         IS A Judgement
+      `stores user content at request`    IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`is a hosting service` MEANS
+    `first known of` (`the answer to` `hosting service judgement`)
+                     `stores user content at request`
+
+@ref dsa-art3 Art 3(k) and Recital 14
+GIVEN `dissemination judgement` IS A Judgement
+      `public posting`          IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`disseminates to the public` MEANS
+    `first known of` (`the answer to` `dissemination judgement`)
+                     (`yes if` `public posting`)
+
+@export The service is an online platform under DSA Art 3(i). Returns yes, no or undetermined (null).
+@ref dsa-art3 Art 3(i)
+GIVEN `hosting service judgement`         IS A Judgement      @desc Art 3(g)(iii) judgement, if one was made
+      `stores user content at request`    IS A MAYBE BOOLEAN  @desc fact: stores information provided by and at the request of users
+      `dissemination judgement`           IS A Judgement      @desc Art 3(k) judgement, if one was made
+      `public posting`                    IS A MAYBE BOOLEAN  @desc fact: users can post publicly
+      `minor ancillary exception`         IS A Judgement      @desc Art 3(i) exception judgement
+GIVETH A MAYBE BOOLEAN
+`is an online platform` MEANS
+    `all of` (LIST (`is a hosting service` `hosting service judgement` `stores user content at request`)
+                   (`disseminates to the public` `dissemination judgement` `public posting`)
+                   (`not` (`the answer to` `minor ancillary exception`)))

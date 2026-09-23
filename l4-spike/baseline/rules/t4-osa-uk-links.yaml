@@ -1,0 +1,36 @@
+# T4 - OSA s.4(5)-(6): links with the United Kingdom
+# Source text quoted from the author's knowledge. NOT checked against legislation.gov.uk (blocked from this environment).
+uk_links:
+  label: The service has links with the United Kingdom
+  cite:
+    instrument: Online Safety Act 2023 (c. 50)
+    pinpoint: s.4(5)-(6)
+    version: latest available (not verified)
+    verified: false
+    text: >-
+      (5) ... a user-to-user service or a search service "has links with the United Kingdom" if (a) the service has a
+      significant number of United Kingdom users, or (b) United Kingdom users form one of the target markets for the
+      service (or the only target market). (6) A user-to-user service or a search service also "has links with the
+      United Kingdom" if (a) the service is capable of being used in the United Kingdom by individuals, and (b) there
+      are reasonable grounds to believe that there is a material risk of significant harm to individuals in the
+      United Kingdom presented by ... user-generated content present on the service ...
+  expr:
+    any:
+      - limb_5a_significant_uk_users
+      - limb_5b_uk_target_market
+      - limb_6_material_risk
+
+limb_5a_significant_uk_users:
+  label: s.4(5)(a) significant number of UK users (judgement)
+  expr: { judgement: significant_number_of_uk_users }
+
+limb_5b_uk_target_market:
+  label: s.4(5)(b) UK users form one of the target markets, or the only one (judgement)
+  expr: { judgement: uk_target_market }
+
+limb_6_material_risk:
+  label: s.4(6) capable of use in the UK and material risk of significant harm to UK individuals
+  expr:
+    all:
+      - { fact: capable_of_use_in_uk }
+      - { judgement: material_risk_of_significant_harm_uk }

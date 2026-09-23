@@ -1,0 +1,924 @@
+{
+  "fixture": "S3",
+  "evaluation_date": "2026-09-23",
+  "tests": {
+    "T1": {
+      "t1_section3": {
+        "result": "UNDETERMINED (one of: Not relevant: not an online platform | Section 3 applies (Art 19(2): designated VLOP))",
+        "relevant_missing": [
+          "minor_ancillary_exception"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "t1_section3: Does Chapter III Section 3 (Arts 20-28) apply to the provider?",
+          "value": null,
+          "cite": {
+            "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+            "pinpoint": "Art 19(1)-(2)",
+            "version": "OJ L 277, 27.10.2022 (original text)",
+            "verified": false,
+            "text": "(1) This Section, with the exception of Article 24(3) thereof, shall not apply to providers of online platforms that qualify as micro or small enterprises as defined in Recommendation 2003/361/EC. This Section, with the exception of Article 24(3) thereof, shall not apply to providers of online platforms that previously qualified for the status of a micro or small enterprise as defined in Recommendation 2003/361/EC during the 12 months following their loss of that status pursuant to Article 4(2) thereof, except when they are very large online platforms in accordance with Article 33. (2) By derogation from paragraph 1 of this Article, this Section shall apply to providers of online platforms that have been designated as very large online platforms in accordance with Article 33, irrespective of whether they qualify as micro or small enterprises."
+          },
+          "children": [
+            {
+              "kind": "when",
+              "label": "if -> \"Not relevant: not an online platform\"",
+              "value": null,
+              "children": [
+                {
+                  "kind": "not",
+                  "label": "NOT",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "rule",
+                      "label": "online_platform: The service is an online platform",
+                      "value": null,
+                      "cite": {
+                        "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                        "pinpoint": "Art 3(i)",
+                        "version": "OJ L 277, 27.10.2022 (original text)",
+                        "verified": false,
+                        "text": "'online platform' means a hosting service that, at the request of a recipient of the service, stores and disseminates information to the public, unless that activity is a minor and purely ancillary feature of another service or a minor functionality of the principal service and, for objective and technical reasons, cannot be used without that other service, and the integration of the feature or functionality into the other service is not a means to circumvent the applicability of this Regulation"
+                      },
+                      "children": [
+                        {
+                          "kind": "all",
+                          "label": "ALL of",
+                          "value": null,
+                          "children": [
+                            {
+                              "kind": "rule",
+                              "label": "hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)",
+                              "value": true,
+                              "cite": {
+                                "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                                "pinpoint": "Art 3(g)(iii)",
+                                "version": "OJ L 277, 27.10.2022 (original text)",
+                                "verified": false,
+                                "text": "a 'hosting' service, consisting of the storage of information provided by, and at the request of, a recipient of the service"
+                              },
+                              "children": [
+                                {
+                                  "kind": "coalesce",
+                                  "label": "FIRST KNOWN of",
+                                  "value": true,
+                                  "children": [
+                                    {
+                                      "kind": "judgement",
+                                      "label": "hosting_service",
+                                      "value": null,
+                                      "source": "judgement not given",
+                                      "missing": "hosting_service",
+                                      "children": []
+                                    },
+                                    {
+                                      "kind": "fact",
+                                      "label": "stores_user_content_at_request",
+                                      "value": true,
+                                      "source": "fact",
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "kind": "rule",
+                              "label": "disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)",
+                              "value": true,
+                              "cite": {
+                                "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                                "pinpoint": "Art 3(k); Recital 14",
+                                "version": "OJ L 277, 27.10.2022 (original text)",
+                                "verified": false,
+                                "text": "'dissemination to the public' means making information available, at the request of the recipient of the service who provided the information, to a potentially unlimited number of third parties"
+                              },
+                              "children": [
+                                {
+                                  "kind": "coalesce",
+                                  "label": "FIRST KNOWN of",
+                                  "value": true,
+                                  "children": [
+                                    {
+                                      "kind": "judgement",
+                                      "label": "disseminates_to_the_public",
+                                      "value": null,
+                                      "source": "judgement not given",
+                                      "missing": "disseminates_to_the_public",
+                                      "children": []
+                                    },
+                                    {
+                                      "kind": "yes_if",
+                                      "label": "YES IF (otherwise undetermined)",
+                                      "value": true,
+                                      "children": [
+                                        {
+                                          "kind": "fact",
+                                          "label": "public_posting",
+                                          "value": true,
+                                          "source": "fact",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "kind": "not",
+                              "label": "NOT",
+                              "value": null,
+                              "children": [
+                                {
+                                  "kind": "judgement",
+                                  "label": "minor_ancillary_exception",
+                                  "value": null,
+                                  "source": "judgement not given",
+                                  "missing": "minor_ancillary_exception",
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "when",
+              "label": "if -> \"Section 3 applies (Art 19(2): designated VLOP)\"",
+              "value": true,
+              "children": [
+                {
+                  "kind": "fact",
+                  "label": "vlop_designated",
+                  "value": true,
+                  "source": "fact",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "possible": [
+            "Not relevant: not an online platform",
+            "Section 3 applies (Art 19(2): designated VLOP)"
+          ]
+        }
+      },
+      "micro_or_small_enterprise": {
+        "result": "no",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "micro_or_small_enterprise: The provider is a micro or small enterprise (Rec 2003/361/EC Annex Art 2(2)-(3))",
+          "value": false,
+          "cite": {
+            "instrument": "Commission Recommendation 2003/361/EC, Annex",
+            "pinpoint": "Art 2(2) and 2(3)",
+            "version": "OJ L 124, 20.5.2003",
+            "verified": false,
+            "text": "(2) Within the SME category, a small enterprise is defined as an enterprise which employs fewer than 50 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 10 million. (3) ... a microenterprise is defined as an enterprise which employs fewer than 10 persons and whose annual turnover and/or annual balance sheet total does not exceed EUR 2 million."
+          },
+          "children": [
+            {
+              "kind": "all",
+              "label": "ALL of",
+              "value": false,
+              "children": [
+                {
+                  "kind": "cmp",
+                  "label": "group_staff_headcount (800) less than 50",
+                  "value": false,
+                  "children": [
+                    {
+                      "kind": "fact",
+                      "label": "group_staff_headcount",
+                      "value": 800,
+                      "source": "fact",
+                      "children": []
+                    },
+                    {
+                      "kind": "literal",
+                      "label": "50",
+                      "value": 50,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "any",
+                  "label": "ANY of",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "cmp",
+                      "label": "annual_turnover_eur (UNDETERMINED) at most 10000000",
+                      "value": null,
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "annual_turnover_eur",
+                          "value": null,
+                          "source": "fact",
+                          "missing": "annual_turnover_eur",
+                          "children": []
+                        },
+                        {
+                          "kind": "literal",
+                          "label": "10000000",
+                          "value": 10000000,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "cmp",
+                      "label": "annual_balance_sheet_eur (UNDETERMINED) at most 10000000",
+                      "value": null,
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "annual_balance_sheet_eur",
+                          "value": null,
+                          "source": "fact",
+                          "missing": "annual_balance_sheet_eur",
+                          "children": []
+                        },
+                        {
+                          "kind": "literal",
+                          "label": "10000000",
+                          "value": 10000000,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "T2": {
+      "t2_vlop_status": {
+        "result": "Designated, obligations applicable",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "t2_vlop_status: VLOP status on the evaluation date",
+          "value": "Designated, obligations applicable",
+          "cite": {
+            "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+            "pinpoint": "Art 33(1), (4), (6)",
+            "version": "OJ L 277, 27.10.2022 (original text)",
+            "verified": false,
+            "text": "(1) This Section shall apply to online platforms and online search engines which have a number of average monthly active recipients of the service in the Union equal to or higher than 45 million, and which are designated as very large online platforms or very large online search engines pursuant to paragraph 4. ... (6) The obligations set out in this Section shall apply, or cease to apply, to the very large online platforms and very large online search engines concerned from four months after the notification to the provider concerned referred to in paragraph 5."
+          },
+          "children": [
+            {
+              "kind": "when",
+              "label": "if -> \"Threshold not met\"",
+              "value": false,
+              "children": [
+                {
+                  "kind": "not",
+                  "label": "NOT",
+                  "value": false,
+                  "children": [
+                    {
+                      "kind": "rule",
+                      "label": "vlop_threshold_met: Average monthly active recipients in the Union are 45 million or more",
+                      "value": true,
+                      "cite": {
+                        "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                        "pinpoint": "Art 33(1)",
+                        "version": "OJ L 277, 27.10.2022 (original text)",
+                        "verified": false,
+                        "text": "a number of average monthly active recipients of the service in the Union equal to or higher than 45 million"
+                      },
+                      "children": [
+                        {
+                          "kind": "cmp",
+                          "label": "eu_monthly_active_recipients (50000000) at least 45000000",
+                          "value": true,
+                          "children": [
+                            {
+                              "kind": "fact",
+                              "label": "eu_monthly_active_recipients",
+                              "value": 50000000,
+                              "source": "fact",
+                              "children": []
+                            },
+                            {
+                              "kind": "literal",
+                              "label": "45000000",
+                              "value": 45000000,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "when",
+              "label": "if -> \"Threshold met, not designated\"",
+              "value": false,
+              "children": [
+                {
+                  "kind": "not",
+                  "label": "NOT",
+                  "value": false,
+                  "children": [
+                    {
+                      "kind": "fact",
+                      "label": "vlop_designated",
+                      "value": true,
+                      "source": "fact",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "when",
+              "label": "if -> \"Designated, obligations not yet applicable\"",
+              "value": false,
+              "children": [
+                {
+                  "kind": "cmp",
+                  "label": "evaluation_date (2026-09-23) less than vlop_notification_date + 4 months",
+                  "value": false,
+                  "children": [
+                    {
+                      "kind": "var",
+                      "label": "evaluation_date",
+                      "value": "2026-09-23",
+                      "children": []
+                    },
+                    {
+                      "kind": "calc",
+                      "label": "vlop_notification_date + 4 months",
+                      "value": "2026-07-01",
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "vlop_notification_date",
+                          "value": "2026-03-01",
+                          "source": "fact",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "vlop_threshold_met": {
+        "result": "yes",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "vlop_threshold_met: Average monthly active recipients in the Union are 45 million or more",
+          "value": true,
+          "cite": {
+            "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+            "pinpoint": "Art 33(1)",
+            "version": "OJ L 277, 27.10.2022 (original text)",
+            "verified": false,
+            "text": "a number of average monthly active recipients of the service in the Union equal to or higher than 45 million"
+          },
+          "children": [
+            {
+              "kind": "cmp",
+              "label": "eu_monthly_active_recipients (50000000) at least 45000000",
+              "value": true,
+              "children": [
+                {
+                  "kind": "fact",
+                  "label": "eu_monthly_active_recipients",
+                  "value": 50000000,
+                  "source": "fact",
+                  "children": []
+                },
+                {
+                  "kind": "literal",
+                  "label": "45000000",
+                  "value": 45000000,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "T3": {
+      "cat1_threshold_met": {
+        "result": "yes",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "cat1_threshold_met: Category 1 threshold conditions met (user-to-user part)",
+          "value": true,
+          "cite": {
+            "instrument": "Online Safety Act 2023 (Category 1, Category 2A and Category 2B Threshold Conditions) Regulations 2025 (SI 2025/226)",
+            "pinpoint": "reg 3",
+            "version": "as made (in force 27 February 2025)",
+            "verified": false,
+            "text": "... in respect of the user-to-user part of that service, it (a) has an average number of monthly active United Kingdom users that exceeds 34 million, and (b) uses a content recommender system; or ... (a) has an average number of monthly active United Kingdom users that exceeds 7 million, (b) uses a content recommender system, and (c) provides a functionality for users to forward or share regulated user-generated content on the service with other users of that service."
+          },
+          "children": [
+            {
+              "kind": "any",
+              "label": "ANY of",
+              "value": true,
+              "children": [
+                {
+                  "kind": "all",
+                  "label": "ALL of",
+                  "value": false,
+                  "children": [
+                    {
+                      "kind": "cmp",
+                      "label": "uk_monthly_active_users (20000000) more than 34000000",
+                      "value": false,
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "uk_monthly_active_users",
+                          "value": 20000000,
+                          "source": "fact",
+                          "children": []
+                        },
+                        {
+                          "kind": "literal",
+                          "label": "34000000",
+                          "value": 34000000,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "fact",
+                      "label": "content_recommender_system",
+                      "value": true,
+                      "source": "fact",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "all",
+                  "label": "ALL of",
+                  "value": true,
+                  "children": [
+                    {
+                      "kind": "cmp",
+                      "label": "uk_monthly_active_users (20000000) more than 7000000",
+                      "value": true,
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "uk_monthly_active_users",
+                          "value": 20000000,
+                          "source": "fact",
+                          "children": []
+                        },
+                        {
+                          "kind": "literal",
+                          "label": "7000000",
+                          "value": 7000000,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "fact",
+                      "label": "content_recommender_system",
+                      "value": true,
+                      "source": "fact",
+                      "children": []
+                    },
+                    {
+                      "kind": "fact",
+                      "label": "forward_or_share_ugc",
+                      "value": true,
+                      "source": "fact",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cat1_on_register": {
+        "result": "no",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "cat1_on_register: Entered in the Ofcom register as a Category 1 service",
+          "value": false,
+          "cite": {
+            "instrument": "Online Safety Act 2023 (c. 50)",
+            "pinpoint": "s.95",
+            "version": "latest available (not verified)",
+            "verified": false,
+            "text": "OFCOM must establish and publish a register of each regulated user-to-user service that meets the Category 1 threshold conditions ..."
+          },
+          "children": [
+            {
+              "kind": "fact",
+              "label": "ofcom_register_category_1",
+              "value": false,
+              "source": "fact",
+              "children": []
+            }
+          ]
+        }
+      },
+      "cat2b_threshold_met": {
+        "result": "yes",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "cat2b_threshold_met: Category 2B threshold conditions met (user-to-user part)",
+          "value": true,
+          "cite": {
+            "instrument": "SI 2025/226",
+            "pinpoint": "reg 5",
+            "version": "as made (in force 27 February 2025)",
+            "verified": false,
+            "text": "... in respect of the user-to-user part of that service, it (a) has an average number of monthly active United Kingdom users that exceeds 3 million, and (b) provides a functionality for users to send direct messages to other users of the same service which is designed such that the message can only be viewed by the specific recipients."
+          },
+          "children": [
+            {
+              "kind": "all",
+              "label": "ALL of",
+              "value": true,
+              "children": [
+                {
+                  "kind": "cmp",
+                  "label": "uk_monthly_active_users (20000000) more than 3000000",
+                  "value": true,
+                  "children": [
+                    {
+                      "kind": "fact",
+                      "label": "uk_monthly_active_users",
+                      "value": 20000000,
+                      "source": "fact",
+                      "children": []
+                    },
+                    {
+                      "kind": "literal",
+                      "label": "3000000",
+                      "value": 3000000,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "fact",
+                  "label": "direct_messaging",
+                  "value": true,
+                  "source": "fact",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cat2b_on_register": {
+        "result": "no",
+        "relevant_missing": [],
+        "trace": {
+          "kind": "rule",
+          "label": "cat2b_on_register: Entered in the Ofcom register as a Category 2B service",
+          "value": false,
+          "cite": {
+            "instrument": "Online Safety Act 2023 (c. 50)",
+            "pinpoint": "s.95",
+            "version": "latest available (not verified)",
+            "verified": false,
+            "text": "OFCOM must establish and publish a register of each regulated user-to-user service that meets the Category 2B threshold conditions ..."
+          },
+          "children": [
+            {
+              "kind": "fact",
+              "label": "ofcom_register_category_2b",
+              "value": false,
+              "source": "fact",
+              "children": []
+            }
+          ]
+        }
+      }
+    },
+    "T4": {
+      "uk_links": {
+        "result": "UNDETERMINED",
+        "relevant_missing": [
+          "significant_number_of_uk_users",
+          "uk_target_market",
+          "material_risk_of_significant_harm_uk"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "uk_links: The service has links with the United Kingdom",
+          "value": null,
+          "cite": {
+            "instrument": "Online Safety Act 2023 (c. 50)",
+            "pinpoint": "s.4(5)-(6)",
+            "version": "latest available (not verified)",
+            "verified": false,
+            "text": "(5) ... a user-to-user service or a search service \"has links with the United Kingdom\" if (a) the service has a significant number of United Kingdom users, or (b) United Kingdom users form one of the target markets for the service (or the only target market). (6) A user-to-user service or a search service also \"has links with the United Kingdom\" if (a) the service is capable of being used in the United Kingdom by individuals, and (b) there are reasonable grounds to believe that there is a material risk of significant harm to individuals in the United Kingdom presented by ... user-generated content present on the service ..."
+          },
+          "children": [
+            {
+              "kind": "any",
+              "label": "ANY of",
+              "value": null,
+              "children": [
+                {
+                  "kind": "rule",
+                  "label": "limb_5a_significant_uk_users: s.4(5)(a) significant number of UK users (judgement)",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "judgement",
+                      "label": "significant_number_of_uk_users",
+                      "value": null,
+                      "source": "judgement not given",
+                      "missing": "significant_number_of_uk_users",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "rule",
+                  "label": "limb_5b_uk_target_market: s.4(5)(b) UK users form one of the target markets, or the only one (judgement)",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "judgement",
+                      "label": "uk_target_market",
+                      "value": null,
+                      "source": "judgement not given",
+                      "missing": "uk_target_market",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "kind": "rule",
+                  "label": "limb_6_material_risk: s.4(6) capable of use in the UK and material risk of significant harm to UK individuals",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "all",
+                      "label": "ALL of",
+                      "value": null,
+                      "children": [
+                        {
+                          "kind": "fact",
+                          "label": "capable_of_use_in_uk",
+                          "value": true,
+                          "source": "fact",
+                          "children": []
+                        },
+                        {
+                          "kind": "judgement",
+                          "label": "material_risk_of_significant_harm_uk",
+                          "value": null,
+                          "source": "judgement not given",
+                          "missing": "material_risk_of_significant_harm_uk",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "limb_5a_significant_uk_users": {
+        "result": "UNDETERMINED",
+        "relevant_missing": [
+          "significant_number_of_uk_users"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "limb_5a_significant_uk_users: s.4(5)(a) significant number of UK users (judgement)",
+          "value": null,
+          "children": [
+            {
+              "kind": "judgement",
+              "label": "significant_number_of_uk_users",
+              "value": null,
+              "source": "judgement not given",
+              "missing": "significant_number_of_uk_users",
+              "children": []
+            }
+          ]
+        }
+      },
+      "limb_5b_uk_target_market": {
+        "result": "UNDETERMINED",
+        "relevant_missing": [
+          "uk_target_market"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "limb_5b_uk_target_market: s.4(5)(b) UK users form one of the target markets, or the only one (judgement)",
+          "value": null,
+          "children": [
+            {
+              "kind": "judgement",
+              "label": "uk_target_market",
+              "value": null,
+              "source": "judgement not given",
+              "missing": "uk_target_market",
+              "children": []
+            }
+          ]
+        }
+      },
+      "limb_6_material_risk": {
+        "result": "UNDETERMINED",
+        "relevant_missing": [
+          "material_risk_of_significant_harm_uk"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "limb_6_material_risk: s.4(6) capable of use in the UK and material risk of significant harm to UK individuals",
+          "value": null,
+          "children": [
+            {
+              "kind": "all",
+              "label": "ALL of",
+              "value": null,
+              "children": [
+                {
+                  "kind": "fact",
+                  "label": "capable_of_use_in_uk",
+                  "value": true,
+                  "source": "fact",
+                  "children": []
+                },
+                {
+                  "kind": "judgement",
+                  "label": "material_risk_of_significant_harm_uk",
+                  "value": null,
+                  "source": "judgement not given",
+                  "missing": "material_risk_of_significant_harm_uk",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "T5": {
+      "online_platform": {
+        "result": "UNDETERMINED",
+        "relevant_missing": [
+          "minor_ancillary_exception"
+        ],
+        "trace": {
+          "kind": "rule",
+          "label": "online_platform: The service is an online platform",
+          "value": null,
+          "cite": {
+            "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+            "pinpoint": "Art 3(i)",
+            "version": "OJ L 277, 27.10.2022 (original text)",
+            "verified": false,
+            "text": "'online platform' means a hosting service that, at the request of a recipient of the service, stores and disseminates information to the public, unless that activity is a minor and purely ancillary feature of another service or a minor functionality of the principal service and, for objective and technical reasons, cannot be used without that other service, and the integration of the feature or functionality into the other service is not a means to circumvent the applicability of this Regulation"
+          },
+          "children": [
+            {
+              "kind": "all",
+              "label": "ALL of",
+              "value": null,
+              "children": [
+                {
+                  "kind": "rule",
+                  "label": "hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)",
+                  "value": true,
+                  "cite": {
+                    "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                    "pinpoint": "Art 3(g)(iii)",
+                    "version": "OJ L 277, 27.10.2022 (original text)",
+                    "verified": false,
+                    "text": "a 'hosting' service, consisting of the storage of information provided by, and at the request of, a recipient of the service"
+                  },
+                  "children": [
+                    {
+                      "kind": "coalesce",
+                      "label": "FIRST KNOWN of",
+                      "value": true,
+                      "children": [
+                        {
+                          "kind": "judgement",
+                          "label": "hosting_service",
+                          "value": null,
+                          "source": "judgement not given",
+                          "missing": "hosting_service",
+                          "children": []
+                        },
+                        {
+                          "kind": "fact",
+                          "label": "stores_user_content_at_request",
+                          "value": true,
+                          "source": "fact",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "rule",
+                  "label": "disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)",
+                  "value": true,
+                  "cite": {
+                    "instrument": "Regulation (EU) 2022/2065 (Digital Services Act)",
+                    "pinpoint": "Art 3(k); Recital 14",
+                    "version": "OJ L 277, 27.10.2022 (original text)",
+                    "verified": false,
+                    "text": "'dissemination to the public' means making information available, at the request of the recipient of the service who provided the information, to a potentially unlimited number of third parties"
+                  },
+                  "children": [
+                    {
+                      "kind": "coalesce",
+                      "label": "FIRST KNOWN of",
+                      "value": true,
+                      "children": [
+                        {
+                          "kind": "judgement",
+                          "label": "disseminates_to_the_public",
+                          "value": null,
+                          "source": "judgement not given",
+                          "missing": "disseminates_to_the_public",
+                          "children": []
+                        },
+                        {
+                          "kind": "yes_if",
+                          "label": "YES IF (otherwise undetermined)",
+                          "value": true,
+                          "children": [
+                            {
+                              "kind": "fact",
+                              "label": "public_posting",
+                              "value": true,
+                              "source": "fact",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "kind": "not",
+                  "label": "NOT",
+                  "value": null,
+                  "children": [
+                    {
+                      "kind": "judgement",
+                      "label": "minor_ancillary_exception",
+                      "value": null,
+                      "source": "judgement not given",
+                      "missing": "minor_ancillary_exception",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

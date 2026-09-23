@@ -1,0 +1,54 @@
+# T5 - DSA Art 3(i) and 3(k): online platform
+# Source text quoted from the author's knowledge. NOT checked against EUR-Lex (blocked from this environment).
+online_platform:
+  label: The service is an online platform
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 3(i)
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      'online platform' means a hosting service that, at the request of a recipient of the service, stores and
+      disseminates information to the public, unless that activity is a minor and purely ancillary feature of another
+      service or a minor functionality of the principal service and, for objective and technical reasons, cannot be
+      used without that other service, and the integration of the feature or functionality into the other service is
+      not a means to circumvent the applicability of this Regulation
+  expr:
+    all:
+      - hosting_service
+      - disseminates_to_the_public
+      - not: { judgement: minor_ancillary_exception }
+
+hosting_service:
+  label: The service is a hosting service (stores information provided by, and at the request of, a recipient)
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 3(g)(iii)
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      a 'hosting' service, consisting of the storage of information provided by, and at the request of, a recipient
+      of the service
+  # A recorded judgement wins; otherwise derive from the storage fact.
+  expr:
+    coalesce:
+      - { judgement: hosting_service }
+      - { fact: stores_user_content_at_request }
+
+disseminates_to_the_public:
+  label: Information is disseminated to the public (made available to a potentially unlimited number of third parties)
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 3(k); Recital 14
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      'dissemination to the public' means making information available, at the request of the recipient of the
+      service who provided the information, to a potentially unlimited number of third parties
+  # A recorded judgement wins. Otherwise only the clear case is derived: public posting => yes.
+  # "No public posting" is NOT derived as "no", because closed groups with automatic admission can
+  # still be dissemination to the public (Recital 14). Left undetermined instead.
+  expr:
+    coalesce:
+      - { judgement: disseminates_to_the_public }
+      - yes_if: { fact: public_posting }

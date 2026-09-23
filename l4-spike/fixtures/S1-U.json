@@ -1,0 +1,53 @@
+{
+  "id": "S1-U",
+  "name": "Small hobby forum - significant UK users undetermined",
+  "evaluation_date": "2026-09-23",
+  "facts": {
+    "established_in": "UK",
+    "uk_monthly_active_users": 40000,
+    "eu_monthly_active_recipients": 15000,
+    "group_staff_headcount": 3,
+    "annual_turnover_eur": 200000,
+    "annual_balance_sheet_eur": null,
+    "formerly_micro_or_small": null,
+    "micro_small_status_lost_on": null,
+    "stores_user_content_at_request": true,
+    "public_posting": true,
+    "direct_messaging": false,
+    "content_recommender_system": false,
+    "forward_or_share_ugc": null,
+    "capable_of_use_in_uk": true,
+    "vlop_designated": false,
+    "vlop_designation_date": null,
+    "vlop_notification_date": null,
+    "ofcom_register_category_1": false,
+    "ofcom_register_category_2b": false
+  },
+  "judgements": {
+    "uk_target_market": {
+      "value": "yes",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Given in brief"
+    },
+    "significant_number_of_uk_users": {
+      "value": "undetermined",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Variant S1-U"
+    },
+    "significant_recipients_in_eu_member_state": {
+      "value": "undetermined",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Given in brief (not used by T1-T5)"
+    }
+  },
+  "assumptions": [
+    "vlop_designated false: not stated in brief; a 15k-recipient forum is not on the Commission's public VLOP list",
+    "ofcom_register_* false: not stated in brief; assumed not listed",
+    "stores_user_content_at_request true and capable_of_use_in_uk true: implied by 'UK-established' and 'public posting and comments'"
+  ],
+  "based_on": "S1",
+  "changed": "significant_number_of_uk_users judgement undetermined"
+}

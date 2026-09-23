@@ -1,0 +1,143 @@
+-- kleene.l4 - strict three-valued (Kleene) logic for the L4 spike.
+--
+-- L4 has no built-in "undetermined" truth value. Its BOOLEAN is two-valued, and the
+-- prelude's comparisons on MAYBE NUMBER return FALSE when a value is missing
+-- (see probes/naive.l4). So every rule file in this folder uses MAYBE BOOLEAN:
+--     JUST TRUE   = yes
+--     JUST FALSE  = no
+--     NOTHING     = undetermined
+-- and the helpers below instead of AND / OR / NOT / AT LEAST.
+
+IMPORT prelude
+IMPORT daydate
+
+§ `Three-valued connectives`
+
+DECLARE Judgement HAS
+    answer       IS A MAYBE BOOLEAN   @desc yes (true), no (false) or undetermined (null)
+    `decided by` IS A STRING          @desc who made the judgement
+    reason       IS A STRING          @desc why
+
+GIVEN j IS A Judgement
+GIVETH A MAYBE BOOLEAN
+`the answer to` j MEANS j's answer
+
+GIVEN xs IS A LIST OF MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`all of` xs MEANS
+    IF elem (JUST FALSE) xs
+    THEN JUST FALSE
+    ELSE IF elem NOTHING xs
+         THEN NOTHING
+         ELSE JUST TRUE
+
+GIVEN xs IS A LIST OF MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`any of` xs MEANS
+    IF elem (JUST TRUE) xs
+    THEN JUST TRUE
+    ELSE IF elem NOTHING xs
+         THEN NOTHING
+         ELSE JUST FALSE
+
+GIVEN x IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`not` x MEANS
+    CONSIDER x
+    WHEN JUST b  THEN JUST (NOT b)
+    WHEN NOTHING THEN NOTHING
+
+-- The first answer that is known. Used for "a recorded judgement wins, otherwise derive".
+GIVEN x IS A MAYBE BOOLEAN
+      y IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`first known of` x y MEANS orElse x y
+
+-- Yes when x is yes, otherwise undetermined. Used where only the positive case can be derived.
+GIVEN x IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+`yes if` x MEANS
+    IF x EQUALS JUST TRUE THEN JUST TRUE ELSE NOTHING
+
+§ `Three-valued comparisons`
+
+GIVEN a IS A MAYBE NUMBER
+      b IS A NUMBER
+GIVETH A MAYBE BOOLEAN
+`more than` a b MEANS
+    CONSIDER a
+    WHEN JUST x  THEN JUST (x GREATER THAN b)
+    WHEN NOTHING THEN NOTHING
+
+GIVEN a IS A MAYBE NUMBER
+      b IS A NUMBER
+GIVETH A MAYBE BOOLEAN
+`at least` a b MEANS
+    CONSIDER a
+    WHEN JUST x  THEN JUST (x AT LEAST b)
+    WHEN NOTHING THEN NOTHING
+
+GIVEN a IS A MAYBE NUMBER
+      b IS A NUMBER
+GIVETH A MAYBE BOOLEAN
+`less than` a b MEANS
+    CONSIDER a
+    WHEN JUST x  THEN JUST (x LESS THAN b)
+    WHEN NOTHING THEN NOTHING
+
+GIVEN a IS A MAYBE NUMBER
+      b IS A NUMBER
+GIVETH A MAYBE BOOLEAN
+`at most` a b MEANS
+    CONSIDER a
+    WHEN JUST x  THEN JUST (x AT MOST b)
+    WHEN NOTHING THEN NOTHING
+
+§ `Dates`
+
+-- Calendar months later, same day of the month. (No end-of-month clamping: the
+-- spike's dates are all on the 1st. Recorded as a limitation in the report.)
+GIVEN d IS A DATE
+      n IS A NUMBER
+GIVETH A DATE
+`months after` n d MEANS
+    Date (DATE_DAY d) (m PLUS 1) y
+    WHERE
+        total MEANS DATE_YEAR d TIMES 12 PLUS DATE_MONTH d MINUS 1 PLUS n
+        y     MEANS FLOOR (total DIVIDED BY 12)
+        m     MEANS total MINUS y TIMES 12
+
+-- Is `day` before `deadline`, where the deadline may be unknown?
+GIVEN day      IS A DATE
+      deadline IS A MAYBE DATE
+GIVETH A MAYBE BOOLEAN
+`before` day deadline MEANS
+    CONSIDER deadline
+    WHEN JUST d  THEN JUST (day LESS THAN d)
+    WHEN NOTHING THEN NOTHING
+
+GIVEN n IS A NUMBER
+      d IS A MAYBE DATE
+GIVETH A MAYBE DATE
+`months after maybe` n d MEANS
+    CONSIDER d
+    WHEN JUST x  THEN JUST (`months after` n x)
+    WHEN NOTHING THEN NOTHING
+
+§ `Outcome tables`
+
+-- First row whose condition is yes wins. Rows whose condition is undetermined stay
+-- possible. Returns every outcome still possible: one item means the answer is settled.
+GIVEN a       IS A TYPE
+      rows    IS A LIST OF PAIR OF MAYBE BOOLEAN, a
+      default IS AN a
+GIVETH A LIST OF a
+`possible outcomes` rows default MEANS
+    CONSIDER rows
+    WHEN EMPTY THEN LIST default
+    WHEN r FOLLOWED BY rest THEN
+        IF fst r EQUALS JUST TRUE
+        THEN LIST (snd r)
+        ELSE IF fst r EQUALS JUST FALSE
+             THEN `possible outcomes` rest default
+             ELSE snd r FOLLOWED BY `possible outcomes` rest default

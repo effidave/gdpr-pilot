@@ -1,0 +1,51 @@
+{
+  "id": "S2",
+  "name": "Messaging app",
+  "evaluation_date": "2026-09-23",
+  "facts": {
+    "established_in": "US",
+    "uk_monthly_active_users": 4000000,
+    "eu_monthly_active_recipients": 2000000,
+    "group_staff_headcount": 60,
+    "annual_turnover_eur": 8000000,
+    "annual_balance_sheet_eur": null,
+    "formerly_micro_or_small": null,
+    "micro_small_status_lost_on": null,
+    "stores_user_content_at_request": null,
+    "public_posting": false,
+    "direct_messaging": true,
+    "content_recommender_system": false,
+    "forward_or_share_ugc": null,
+    "capable_of_use_in_uk": true,
+    "max_group_size": 256,
+    "vlop_designated": false,
+    "vlop_designation_date": null,
+    "vlop_notification_date": null,
+    "ofcom_register_category_1": false,
+    "ofcom_register_category_2b": false
+  },
+  "judgements": {
+    "significant_number_of_uk_users": {
+      "value": "yes",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Given in brief"
+    },
+    "hosting_service": {
+      "value": "undetermined",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Given in brief"
+    },
+    "disseminates_to_the_public": {
+      "value": "no",
+      "decided_by": "brief section 6 (provisional)",
+      "decided_on": "2026-09-23",
+      "reason": "Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication"
+    }
+  },
+  "assumptions": [
+    "vlop_designated false and ofcom_register_* false: not stated in brief; assumed",
+    "capable_of_use_in_uk true: 4m UK users implies it"
+  ]
+}

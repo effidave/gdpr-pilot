@@ -1,0 +1,31 @@
+{
+  "id": "S3",
+  "name": "Large social network",
+  "evaluation_date": "2026-09-23",
+  "facts": {
+    "established_in": "IE",
+    "uk_monthly_active_users": 20000000,
+    "eu_monthly_active_recipients": 50000000,
+    "group_staff_headcount": 800,
+    "annual_turnover_eur": null,
+    "annual_balance_sheet_eur": null,
+    "formerly_micro_or_small": null,
+    "micro_small_status_lost_on": null,
+    "stores_user_content_at_request": true,
+    "public_posting": true,
+    "direct_messaging": true,
+    "content_recommender_system": true,
+    "forward_or_share_ugc": true,
+    "capable_of_use_in_uk": true,
+    "vlop_designated": true,
+    "vlop_designation_date": "2026-03-01",
+    "vlop_notification_date": "2026-03-01",
+    "ofcom_register_category_1": false,
+    "ofcom_register_category_2b": false
+  },
+  "judgements": {},
+  "assumptions": [
+    "vlop_notification_date = designation date: Art 33(6) runs from notification, the brief gives only the designation date",
+    "The brief gives no judgements for S3 (significant UK users, target market, ancillary exception) - left unanswered on purpose"
+  ]
+}

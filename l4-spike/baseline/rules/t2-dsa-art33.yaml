@@ -1,0 +1,35 @@
+# T2 - DSA Art 33: very large online platforms
+# Source text quoted from the author's knowledge. NOT checked against EUR-Lex (blocked from this environment).
+t2_vlop_status:
+  label: VLOP status on the evaluation date
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 33(1), (4), (6)
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      (1) This Section shall apply to online platforms and online search engines which have a number of average
+      monthly active recipients of the service in the Union equal to or higher than 45 million, and which are
+      designated as very large online platforms or very large online search engines pursuant to paragraph 4. ...
+      (6) The obligations set out in this Section shall apply, or cease to apply, to the very large online platforms
+      and very large online search engines concerned from four months after the notification to the provider
+      concerned referred to in paragraph 5.
+  outcomes:
+    - when: { not: vlop_threshold_met }
+      result: "Threshold not met"
+    - when: { not: { fact: vlop_designated } }
+      result: "Threshold met, not designated"
+    - when: { lt: [ { var: evaluation_date }, { add_months: [ { fact: vlop_notification_date }, 4 ] } ] }
+      result: "Designated, obligations not yet applicable"
+  otherwise: "Designated, obligations applicable"
+
+vlop_threshold_met:
+  label: Average monthly active recipients in the Union are 45 million or more
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 33(1)
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: a number of average monthly active recipients of the service in the Union equal to or higher than 45 million
+  expr:
+    gte: [ { fact: eu_monthly_active_recipients }, 45000000 ]

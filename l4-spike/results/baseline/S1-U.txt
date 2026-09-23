@@ -1,0 +1,121 @@
+# S1-U evaluated on 2026-09-23
+
+## T1
+
+t1_section3 => UNDETERMINED (one of: Not relevant: not an online platform | Section 3 does not apply, except Art 24(3) (micro or small enterprise))
+  questions that could change this: minor_ancillary_exception
+  [?]   t1_section3: Does Chapter III Section 3 (Arts 20-28) apply to the provider?  (still possible: Not relevant: not an online platform | Section 3 does not apply, except Art 24(3) (micro or small enterprise))
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 19(1)-(2) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [?]   if -> "Not relevant: not an online platform"
+        [?]   NOT
+           [?]   online_platform: The service is an online platform
+                 cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(i) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+              [?]   ALL of
+                 [YES] hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)
+                       cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(g)(iii) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+                    [YES] FIRST KNOWN of
+                       [?]   hosting_service  <- judgement not given
+                       [YES] stores_user_content_at_request  = TRUE
+                 [YES] disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)
+                       cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(k); Recital 14 (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+                    [YES] FIRST KNOWN of
+                       [?]   disseminates_to_the_public  <- judgement not given
+                       [YES] YES IF (otherwise undetermined)
+                          [YES] public_posting  = TRUE
+                 [?]   NOT
+                    [?]   minor_ancillary_exception  <- judgement not given
+     [NO]  if -> "Section 3 applies (Art 19(2): designated VLOP)"
+        [NO]  vlop_designated  = FALSE
+     [YES] if -> "Section 3 does not apply, except Art 24(3) (micro or small enterprise)"
+        [YES] micro_or_small_enterprise: The provider is a micro or small enterprise (Rec 2003/361/EC Annex Art 2(2)-(3))
+              cite: Commission Recommendation 2003/361/EC, Annex, Art 2(2) and 2(3) (OJ L 124, 20.5.2003) [text UNVERIFIED]
+           [YES] ALL of
+              [YES] group_staff_headcount (3) less than 50
+                 [3] group_staff_headcount  = 3
+              [YES] ANY of
+                 [YES] annual_turnover_eur (200000) at most 10000000
+                    [200000] annual_turnover_eur  = 200000
+                 [?]   annual_balance_sheet_eur (UNDETERMINED) at most 10000000
+                    [?]   annual_balance_sheet_eur  <- MISSING FACT
+
+micro_or_small_enterprise => yes
+
+## T2
+
+t2_vlop_status => Threshold not met
+  [Threshold not met] t2_vlop_status: VLOP status on the evaluation date
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 33(1), (4), (6) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [YES] if -> "Threshold not met"
+        [YES] NOT
+           [NO]  vlop_threshold_met: Average monthly active recipients in the Union are 45 million or more
+                 cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 33(1) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+              [NO]  eu_monthly_active_recipients (15000) at least 45000000
+                 [15000] eu_monthly_active_recipients  = 15000
+
+vlop_threshold_met => no
+
+## T3
+
+cat1_threshold_met => no
+  [NO]  cat1_threshold_met: Category 1 threshold conditions met (user-to-user part)
+        cite: Online Safety Act 2023 (Category 1, Category 2A and Category 2B Threshold Conditions) Regulations 2025 (SI 2025/226), reg 3 (as made (in force 27 February 2025)) [text UNVERIFIED]
+     [NO]  ANY of
+        [NO]  ALL of
+           [NO]  uk_monthly_active_users (40000) more than 34000000
+              [40000] uk_monthly_active_users  = 40000
+           [NO]  content_recommender_system  = FALSE
+        [NO]  ALL of
+           [NO]  uk_monthly_active_users (40000) more than 7000000
+              [40000] uk_monthly_active_users  = 40000
+           [NO]  content_recommender_system  = FALSE
+           [?]   forward_or_share_ugc  <- MISSING FACT
+
+cat1_on_register => no
+
+cat2b_threshold_met => no
+
+cat2b_on_register => no
+
+## T4
+
+uk_links => yes
+  [YES] uk_links: The service has links with the United Kingdom
+        cite: Online Safety Act 2023 (c. 50), s.4(5)-(6) (latest available (not verified)) [text UNVERIFIED]
+     [YES] ANY of
+        [?]   limb_5a_significant_uk_users: s.4(5)(a) significant number of UK users (judgement)
+           [?]   significant_number_of_uk_users  <- judgement "undetermined" by brief section 6 (provisional): Variant S1-U
+        [YES] limb_5b_uk_target_market: s.4(5)(b) UK users form one of the target markets, or the only one (judgement)
+           [YES] uk_target_market  <- judgement "yes" by brief section 6 (provisional): Given in brief
+        [?]   limb_6_material_risk: s.4(6) capable of use in the UK and material risk of significant harm to UK individuals
+           [?]   ALL of
+              [YES] capable_of_use_in_uk  = TRUE
+              [?]   material_risk_of_significant_harm_uk  <- judgement not given
+
+limb_5a_significant_uk_users => UNDETERMINED
+  questions that could change this: significant_number_of_uk_users
+
+limb_5b_uk_target_market => yes
+
+limb_6_material_risk => UNDETERMINED
+  questions that could change this: material_risk_of_significant_harm_uk
+
+## T5
+
+online_platform => UNDETERMINED
+  questions that could change this: minor_ancillary_exception
+  [?]   online_platform: The service is an online platform
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(i) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [?]   ALL of
+        [YES] hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)
+              cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(g)(iii) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+           [YES] FIRST KNOWN of
+              [?]   hosting_service  <- judgement not given
+              [YES] stores_user_content_at_request  = TRUE
+        [YES] disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)
+              cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(k); Recital 14 (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+           [YES] FIRST KNOWN of
+              [?]   disseminates_to_the_public  <- judgement not given
+              [YES] YES IF (otherwise undetermined)
+                 [YES] public_posting  = TRUE
+        [?]   NOT
+           [?]   minor_ancillary_exception  <- judgement not given

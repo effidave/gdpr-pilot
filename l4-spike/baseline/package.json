@@ -1,0 +1,12 @@
+{
+  "name": "l4-spike-baseline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "run": "node run.ts",
+    "test": "node run.ts --check"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  }
+}

@@ -1,0 +1,66 @@
+-- ============================================================================
+-- T2 - Digital Services Act: very large online platforms
+-- Instrument : Regulation (EU) 2022/2065 (Digital Services Act)
+--              http://data.europa.eu/eli/reg/2022/2065/oj
+-- Pinpoint   : Art 33(1), (4), (6)
+-- Version    : OJ L 277, 27.10.2022, p. 1 (original text) - NOT CHECKED. EUR-Lex was
+--              blocked from the spike environment, so the text below is quoted from
+--              the author's knowledge and must be verified before reliance.
+-- Evaluated  : 2026-09-23
+-- Operative text (UNVERIFIED):
+--   Art 33(1): This Section shall apply to online platforms and online search
+--     engines which have a number of average monthly active recipients of the
+--     service in the Union equal to or higher than 45 million, and which are
+--     designated as very large online platforms or very large online search
+--     engines pursuant to paragraph 4.
+--   Art 33(4): The Commission shall ... adopt a decision designating as a very
+--     large online platform ... the online platform ... which has a number of
+--     average monthly active recipients of the service equal to or higher than the
+--     number referred to in paragraph 1 ...
+--   Art 33(6): The obligations set out in this Section shall apply, or cease to
+--     apply, to the very large online platforms and very large online search
+--     engines concerned from four months after the notification to the provider
+--     concerned referred to in paragraph 5.
+-- Modelling: the four-month period runs from NOTIFICATION (Art 33(5)-(6)), not from
+-- the designation decision, so the notification date is the input.
+-- ============================================================================
+
+IMPORT prelude
+IMPORT daydate
+IMPORT kleene
+
+§ `DSA Art 33 - very large online platforms`
+@ref-map dsa-art33 https://eur-lex.europa.eu/eli/reg/2022/2065/oj#art_33
+
+DECLARE `VLOP status` IS ONE OF
+    `Threshold not met`
+    `Threshold met, not designated`
+    `Designated, obligations not yet applicable`
+    `Designated, obligations applicable`
+
+@ref dsa-art33 Art 33(1)
+GIVEN `average monthly active EU recipients` IS A MAYBE NUMBER
+GIVETH A MAYBE BOOLEAN
+`VLOP threshold met` MEANS
+    `at least` `average monthly active EU recipients` 45000000
+
+@ref dsa-art33 Art 33(6)
+GIVEN `evaluation date`   IS A DATE
+      `notification date` IS A MAYBE DATE
+GIVETH A MAYBE BOOLEAN
+`obligations not yet applicable` MEANS
+    `before` `evaluation date` (`months after maybe` 4 `notification date`)
+
+@export VLOP status under DSA Art 33 on the evaluation date. Returns every status still possible; one item means settled.
+@ref dsa-art33 Art 33(1), (4), (6)
+GIVEN `evaluation date`                      IS A DATE           @desc date the question is asked (ISO 8601)
+      `average monthly active EU recipients` IS A MAYBE NUMBER   @desc Art 33(1) figure; null if unknown
+      `designated as VLOP`                   IS A MAYBE BOOLEAN  @desc Commission designation under Art 33(4); null if unknown
+      `notification date`                    IS A MAYBE DATE     @desc date the designation was notified to the provider (Art 33(5)); null if unknown
+GIVETH A LIST OF `VLOP status`
+`VLOP status on` MEANS
+    `possible outcomes`
+        (LIST (PAIR OF (`not` (`VLOP threshold met` `average monthly active EU recipients`)), `Threshold not met`),
+              (PAIR OF (`not` `designated as VLOP`), `Threshold met, not designated`),
+              (PAIR OF (`obligations not yet applicable` `evaluation date` `notification date`), `Designated, obligations not yet applicable`))
+        `Designated, obligations applicable`

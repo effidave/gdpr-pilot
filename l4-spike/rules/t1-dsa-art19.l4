@@ -1,0 +1,91 @@
+-- ============================================================================
+-- T1 - Digital Services Act: exclusion of micro and small enterprises
+-- Instrument : Regulation (EU) 2022/2065 (Digital Services Act)
+--              http://data.europa.eu/eli/reg/2022/2065/oj
+--              Commission Recommendation 2003/361/EC, Annex (SME definition)
+-- Pinpoint   : DSA Art 19(1)-(2); Rec 2003/361/EC Annex Art 2(2)-(3), Art 4(2)
+-- Version    : DSA OJ L 277, 27.10.2022 (original text); Rec OJ L 124, 20.5.2003
+--              - NOT CHECKED. EUR-Lex was blocked from the spike environment, so the
+--              text below is quoted from the author's knowledge and must be verified.
+-- Evaluated  : 2026-09-23
+-- Operative text (UNVERIFIED):
+--   Art 19(1): This Section, with the exception of Article 24(3) thereof, shall not
+--     apply to providers of online platforms that qualify as micro or small
+--     enterprises as defined in Recommendation 2003/361/EC.
+--     This Section, with the exception of Article 24(3) thereof, shall not apply to
+--     providers of online platforms that previously qualified for the status of a
+--     micro or small enterprise as defined in Recommendation 2003/361/EC during the
+--     12 months following their loss of that status pursuant to Article 4(2)
+--     thereof, except when they are very large online platforms in accordance with
+--     Article 33.
+--   Art 19(2): By derogation from paragraph 1 of this Article, this Section shall
+--     apply to providers of online platforms that have been designated as very
+--     large online platforms in accordance with Article 33, irrespective of whether
+--     they qualify as micro or small enterprises.
+--   Rec 2003/361/EC Annex Art 2(2): a small enterprise is defined as an enterprise
+--     which employs fewer than 50 persons and whose annual turnover and/or annual
+--     balance sheet total does not exceed EUR 10 million.
+--   Annex Art 2(3): a microenterprise ... employs fewer than 10 persons and whose
+--     annual turnover and/or annual balance sheet total does not exceed EUR 2 million.
+-- Modelling:
+--   * "This Section" is Chapter III Section 3 (Arts 19-28); Art 24(3) survives.
+--   * Headcount is the GROUP headcount (linked and partner enterprises, Annex Arts
+--     3 and 6), supplied as a fact. The aggregation itself is not modelled.
+--   * Every micro enterprise is also small, so the small test decides.
+--   * Art 4(2) (status changes only after two consecutive accounting periods) is
+--     not modelled: the caller supplies whether and when status was lost.
+-- ============================================================================
+
+IMPORT prelude
+IMPORT daydate
+IMPORT kleene
+IMPORT `t5-dsa-online-platform`
+
+§ `DSA Art 19 - micro and small enterprises`
+@ref-map dsa-art19 https://eur-lex.europa.eu/eli/reg/2022/2065/oj#art_19
+@ref-map rec-2003-361 https://eur-lex.europa.eu/eli/reco/2003/361/oj
+
+DECLARE `Section 3 outcome` IS ONE OF
+    `Not relevant: not an online platform`
+    `Section 3 applies (Art 19(2): designated VLOP)`
+    `Section 3 does not apply, except Art 24(3) (micro or small enterprise)`
+    `Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status)`
+    `Section 3 applies`
+
+@ref rec-2003-361 Annex Art 2(2)-(3)
+GIVEN `group staff headcount`    IS A MAYBE NUMBER
+      `annual turnover`          IS A MAYBE NUMBER
+      `annual balance sheet total` IS A MAYBE NUMBER
+GIVETH A MAYBE BOOLEAN
+`micro or small enterprise` MEANS
+    `all of` (LIST (`less than` `group staff headcount` 50)
+                   (`any of` (LIST (`at most` `annual turnover` 10000000)
+                                   (`at most` `annual balance sheet total` 10000000))))
+
+@ref dsa-art19 Art 19(1) second subparagraph
+GIVEN `evaluation date`          IS A DATE
+      `formerly micro or small`  IS A MAYBE BOOLEAN
+      `status lost on`           IS A MAYBE DATE
+GIVETH A MAYBE BOOLEAN
+`within 12 months of losing the status` MEANS
+    `all of` (LIST `formerly micro or small`
+                   (`before` `evaluation date` (`months after maybe` 12 `status lost on`)))
+
+@export Does DSA Chapter III Section 3 (Arts 19-28) apply? Returns every outcome still possible; one item means settled.
+@ref dsa-art19 Art 19(1)-(2)
+GIVEN `evaluation date`                   IS A DATE           @desc ISO 8601
+      `online platform`                   IS A MAYBE BOOLEAN  @desc result of T5; null if undetermined
+      `designated as VLOP`                IS A MAYBE BOOLEAN  @desc null if unknown
+      `group staff headcount`             IS A MAYBE NUMBER   @desc staff headcount including linked and partner enterprises; null if unknown
+      `annual turnover`                   IS A MAYBE NUMBER   @desc EUR; null if unknown
+      `annual balance sheet total`        IS A MAYBE NUMBER   @desc EUR; null if unknown
+      `formerly micro or small`           IS A MAYBE BOOLEAN  @desc previously qualified as micro or small; null if unknown
+      `status lost on`                    IS A MAYBE DATE     @desc date micro or small status was lost; null if unknown
+GIVETH A LIST OF `Section 3 outcome`
+`Section 3 outcome for` MEANS
+    `possible outcomes`
+        (LIST (PAIR OF (`not` `online platform`), `Not relevant: not an online platform`),
+              (PAIR OF `designated as VLOP`, `Section 3 applies (Art 19(2): designated VLOP)`),
+              (PAIR OF (`micro or small enterprise` `group staff headcount` `annual turnover` `annual balance sheet total`), `Section 3 does not apply, except Art 24(3) (micro or small enterprise)`),
+              (PAIR OF (`within 12 months of losing the status` `evaluation date` `formerly micro or small` `status lost on`), `Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status)`))
+        `Section 3 applies`

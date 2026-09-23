@@ -1,0 +1,64 @@
+# T1 - DSA Art 19: exclusion of micro and small enterprises from Chapter III Section 3
+# Source text quoted from the author's knowledge. NOT checked against EUR-Lex (blocked from this environment).
+t1_section3:
+  label: Does Chapter III Section 3 (Arts 20-28) apply to the provider?
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 19(1)-(2)
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      (1) This Section, with the exception of Article 24(3) thereof, shall not apply to providers of online platforms
+      that qualify as micro or small enterprises as defined in Recommendation 2003/361/EC. This Section, with the
+      exception of Article 24(3) thereof, shall not apply to providers of online platforms that previously qualified
+      for the status of a micro or small enterprise as defined in Recommendation 2003/361/EC during the 12 months
+      following their loss of that status pursuant to Article 4(2) thereof, except when they are very large online
+      platforms in accordance with Article 33. (2) By derogation from paragraph 1 of this Article, this Section shall
+      apply to providers of online platforms that have been designated as very large online platforms in accordance
+      with Article 33, irrespective of whether they qualify as micro or small enterprises.
+  outcomes:
+    - when: { not: online_platform }
+      result: "Not relevant: not an online platform"
+    - when: { fact: vlop_designated }
+      result: "Section 3 applies (Art 19(2): designated VLOP)"
+    - when: micro_or_small_enterprise
+      result: "Section 3 does not apply, except Art 24(3) (micro or small enterprise)"
+    - when: within_12_month_grace
+      result: "Section 3 does not apply, except Art 24(3) (12 months after losing micro/small status)"
+  otherwise: "Section 3 applies"
+
+micro_or_small_enterprise:
+  label: The provider is a micro or small enterprise (Rec 2003/361/EC Annex Art 2(2)-(3))
+  cite:
+    instrument: Commission Recommendation 2003/361/EC, Annex
+    pinpoint: Art 2(2) and 2(3)
+    version: OJ L 124, 20.5.2003
+    verified: false
+    text: >-
+      (2) Within the SME category, a small enterprise is defined as an enterprise which employs fewer than 50 persons
+      and whose annual turnover and/or annual balance sheet total does not exceed EUR 10 million. (3) ... a
+      microenterprise is defined as an enterprise which employs fewer than 10 persons and whose annual turnover and/or
+      annual balance sheet total does not exceed EUR 2 million.
+  # Every micro enterprise is also small, so the small test decides. Headcount is the GROUP figure
+  # (linked and partner enterprises, Annex Arts 3 and 6) - supplied as a fact, not computed here.
+  expr:
+    all:
+      - lt: [ { fact: group_staff_headcount }, 50 ]
+      - any:
+          - lte: [ { fact: annual_turnover_eur }, 10000000 ]
+          - lte: [ { fact: annual_balance_sheet_eur }, 10000000 ]
+
+within_12_month_grace:
+  label: The provider lost micro/small status less than 12 months before the evaluation date (Art 19(1) 2nd subpara)
+  cite:
+    instrument: Regulation (EU) 2022/2065 (Digital Services Act)
+    pinpoint: Art 19(1), second subparagraph
+    version: OJ L 277, 27.10.2022 (original text)
+    verified: false
+    text: >-
+      ... during the 12 months following their loss of that status pursuant to Article 4(2) thereof, except when
+      they are very large online platforms in accordance with Article 33.
+  expr:
+    all:
+      - { fact: formerly_micro_or_small }
+      - lt: [ { var: evaluation_date }, { add_months: [ { fact: micro_small_status_lost_on }, 12 ] } ]

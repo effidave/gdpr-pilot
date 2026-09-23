@@ -1,0 +1,82 @@
+-- ============================================================================
+-- T3 - Online Safety Act 2023: Category 1 and Category 2B threshold conditions
+-- Instrument : The Online Safety Act 2023 (Category 1, Category 2A and Category 2B
+--              Threshold Conditions) Regulations 2025 (SI 2025/226); Online Safety
+--              Act 2023 (c. 50) s.95 (register)
+-- Pinpoint   : SI 2025/226 reg 3 (Category 1), reg 5 (Category 2B); OSA s.95
+-- Version    : SI 2025/226 as made (in force 27 February 2025); OSA latest available
+--              - NOT CHECKED. legislation.gov.uk was blocked from the spike
+--              environment, so the text below is quoted from the author's knowledge
+--              and must be verified before reliance.
+-- Evaluated  : 2026-09-23
+-- Operative text (UNVERIFIED):
+--   reg 3: The Category 1 threshold conditions are met by a regulated user-to-user
+--     service where, in respect of the user-to-user part of that service, it -
+--     (a) has an average number of monthly active United Kingdom users that
+--         exceeds 34 million, and (b) uses a content recommender system; or
+--     (a) has an average number of monthly active United Kingdom users that
+--         exceeds 7 million, (b) uses a content recommender system, and
+--     (c) provides a functionality for users to forward or share regulated
+--         user-generated content on the service with other users of that service.
+--   reg 5: The Category 2B threshold conditions are met by a regulated
+--     user-to-user service where, in respect of the user-to-user part of that
+--     service, it - (a) has an average number of monthly active United Kingdom
+--     users that exceeds 3 million, and (b) provides a functionality for users to
+--     send direct messages to other users of the same service which is designed
+--     such that the message can only be viewed by the specific recipients.
+--   OSA s.95: OFCOM must establish and publish a register of ... services which
+--     meet the Category 1 / 2A / 2B threshold conditions. The additional duties
+--     attach to services entered in the register, not to services that merely
+--     meet the thresholds.
+-- Modelling: "threshold met" and "on the register" are reported separately.
+-- "exceeds" is encoded as strictly more than.
+-- ============================================================================
+
+IMPORT prelude
+IMPORT kleene
+
+§ `SI 2025/226 - Category 1 and Category 2B threshold conditions`
+@ref-map si-2025-226 https://www.legislation.gov.uk/uksi/2025/226
+
+@export Category 1 threshold conditions met (SI 2025/226 reg 3). Returns yes, no or undetermined (null).
+@ref si-2025-226 reg 3
+GIVEN `monthly active UK users`        IS A MAYBE NUMBER   @desc average monthly active UK users of the user-to-user part; null if unknown
+      `content recommender system`     IS A MAYBE BOOLEAN  @desc uses a content recommender system; null if unknown
+      `forward or share functionality` IS A MAYBE BOOLEAN  @desc users can forward or share user-generated content; null if unknown
+GIVETH A MAYBE BOOLEAN
+`Category 1 threshold met` MEANS
+    `any of` (LIST (`all of` (LIST (`more than` `monthly active UK users` 34000000)
+                                  `content recommender system`))
+                   (`all of` (LIST (`more than` `monthly active UK users` 7000000)
+                                  `content recommender system`
+                                  `forward or share functionality`)))
+
+@export Category 2B threshold conditions met (SI 2025/226 reg 5). Returns yes, no or undetermined (null).
+@ref si-2025-226 reg 5
+GIVEN `monthly active UK users` IS A MAYBE NUMBER   @desc average monthly active UK users of the user-to-user part; null if unknown
+      `direct messaging`        IS A MAYBE BOOLEAN  @desc users can send direct messages viewable only by the recipients; null if unknown
+GIVETH A MAYBE BOOLEAN
+`Category 2B threshold met` MEANS
+    `all of` (LIST (`more than` `monthly active UK users` 3000000)
+                   `direct messaging`)
+
+DECLARE `OSA category result` HAS
+    `Category 1 threshold met`    IS A MAYBE BOOLEAN
+    `Category 1 on the register`  IS A MAYBE BOOLEAN
+    `Category 2B threshold met`   IS A MAYBE BOOLEAN
+    `Category 2B on the register` IS A MAYBE BOOLEAN
+
+@export OSA categorisation: threshold conditions and s.95 register entry, reported separately.
+GIVEN `monthly active UK users`        IS A MAYBE NUMBER   @desc average monthly active UK users of the user-to-user part; null if unknown
+      `content recommender system`     IS A MAYBE BOOLEAN  @desc null if unknown
+      `forward or share functionality` IS A MAYBE BOOLEAN  @desc null if unknown
+      `direct messaging`               IS A MAYBE BOOLEAN  @desc null if unknown
+      `on register as Category 1`      IS A MAYBE BOOLEAN  @desc entered in the OSA s.95 register as Category 1; null if unknown
+      `on register as Category 2B`     IS A MAYBE BOOLEAN  @desc entered in the OSA s.95 register as Category 2B; null if unknown
+GIVETH AN `OSA category result`
+`OSA categorisation` MEANS
+    `OSA category result` WITH
+        `Category 1 threshold met`    IS `Category 1 threshold met` `monthly active UK users` `content recommender system` `forward or share functionality`
+        `Category 1 on the register`  IS `on register as Category 1`
+        `Category 2B threshold met`   IS `Category 2B threshold met` `monthly active UK users` `direct messaging`
+        `Category 2B on the register` IS `on register as Category 2B`

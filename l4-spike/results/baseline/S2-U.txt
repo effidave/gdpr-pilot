@@ -1,0 +1,107 @@
+# S2-U evaluated on 2026-09-23
+
+## T1
+
+t1_section3 => Not relevant: not an online platform
+  [Not relevant: not an online platform] t1_section3: Does Chapter III Section 3 (Arts 20-28) apply to the provider?
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 19(1)-(2) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [YES] if -> "Not relevant: not an online platform"
+        [YES] NOT
+           [NO]  online_platform: The service is an online platform
+                 cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(i) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+              [NO]  ALL of
+                 [?]   hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)
+                       cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(g)(iii) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+                    [?]   FIRST KNOWN of
+                       [?]   hosting_service  <- judgement "undetermined" by brief section 6 (provisional): Given in brief
+                       [?]   stores_user_content_at_request  <- MISSING FACT
+                 [NO]  disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)
+                       cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(k); Recital 14 (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+                    [NO]  FIRST KNOWN of
+                       [NO]  disseminates_to_the_public  <- judgement "no" by brief section 6 (provisional): Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication
+                       [?]   YES IF (otherwise undetermined)
+                          [NO]  public_posting  = FALSE
+                 [?]   NOT
+                    [?]   minor_ancillary_exception  <- judgement not given
+
+micro_or_small_enterprise => UNDETERMINED
+  questions that could change this: group_staff_headcount
+
+## T2
+
+t2_vlop_status => Threshold not met
+  [Threshold not met] t2_vlop_status: VLOP status on the evaluation date
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 33(1), (4), (6) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [YES] if -> "Threshold not met"
+        [YES] NOT
+           [NO]  vlop_threshold_met: Average monthly active recipients in the Union are 45 million or more
+                 cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 33(1) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+              [NO]  eu_monthly_active_recipients (2000000) at least 45000000
+                 [2000000] eu_monthly_active_recipients  = 2000000
+
+vlop_threshold_met => no
+
+## T3
+
+cat1_threshold_met => no
+  [NO]  cat1_threshold_met: Category 1 threshold conditions met (user-to-user part)
+        cite: Online Safety Act 2023 (Category 1, Category 2A and Category 2B Threshold Conditions) Regulations 2025 (SI 2025/226), reg 3 (as made (in force 27 February 2025)) [text UNVERIFIED]
+     [NO]  ANY of
+        [NO]  ALL of
+           [NO]  uk_monthly_active_users (4000000) more than 34000000
+              [4000000] uk_monthly_active_users  = 4000000
+           [NO]  content_recommender_system  = FALSE
+        [NO]  ALL of
+           [NO]  uk_monthly_active_users (4000000) more than 7000000
+              [4000000] uk_monthly_active_users  = 4000000
+           [NO]  content_recommender_system  = FALSE
+           [?]   forward_or_share_ugc  <- MISSING FACT
+
+cat1_on_register => no
+
+cat2b_threshold_met => yes
+
+cat2b_on_register => no
+
+## T4
+
+uk_links => yes
+  [YES] uk_links: The service has links with the United Kingdom
+        cite: Online Safety Act 2023 (c. 50), s.4(5)-(6) (latest available (not verified)) [text UNVERIFIED]
+     [YES] ANY of
+        [YES] limb_5a_significant_uk_users: s.4(5)(a) significant number of UK users (judgement)
+           [YES] significant_number_of_uk_users  <- judgement "yes" by brief section 6 (provisional): Given in brief
+        [?]   limb_5b_uk_target_market: s.4(5)(b) UK users form one of the target markets, or the only one (judgement)
+           [?]   uk_target_market  <- judgement not given
+        [?]   limb_6_material_risk: s.4(6) capable of use in the UK and material risk of significant harm to UK individuals
+           [?]   ALL of
+              [YES] capable_of_use_in_uk  = TRUE
+              [?]   material_risk_of_significant_harm_uk  <- judgement not given
+
+limb_5a_significant_uk_users => yes
+
+limb_5b_uk_target_market => UNDETERMINED
+  questions that could change this: uk_target_market
+
+limb_6_material_risk => UNDETERMINED
+  questions that could change this: material_risk_of_significant_harm_uk
+
+## T5
+
+online_platform => no
+  [NO]  online_platform: The service is an online platform
+        cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(i) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+     [NO]  ALL of
+        [?]   hosting_service: The service is a hosting service (stores information provided by, and at the request of, a recipient)
+              cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(g)(iii) (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+           [?]   FIRST KNOWN of
+              [?]   hosting_service  <- judgement "undetermined" by brief section 6 (provisional): Given in brief
+              [?]   stores_user_content_at_request  <- MISSING FACT
+        [NO]  disseminates_to_the_public: Information is disseminated to the public (made available to a potentially unlimited number of third parties)
+              cite: Regulation (EU) 2022/2065 (Digital Services Act), Art 3(k); Recital 14 (OJ L 277, 27.10.2022 (original text)) [text UNVERIFIED]
+           [NO]  FIRST KNOWN of
+              [NO]  disseminates_to_the_public  <- judgement "no" by brief section 6 (provisional): Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication
+              [?]   YES IF (otherwise undetermined)
+                 [NO]  public_posting  = FALSE
+        [?]   NOT
+           [?]   minor_ancillary_exception  <- judgement not given

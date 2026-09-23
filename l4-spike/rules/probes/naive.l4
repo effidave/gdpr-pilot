@@ -1,0 +1,48 @@
+-- probes/naive.l4 - how does idiomatic L4 behave when a fact is missing?
+-- These are the encodings a lawyer would write first, using BOOLEAN / NUMBER
+-- inputs or MAYBE NUMBER with the ordinary comparison words. Not used for the
+-- scored results; used to measure L4's default unknown handling.
+
+IMPORT prelude
+
+-- Probe A: plain BOOLEAN / NUMBER inputs (the documented, idiomatic style).
+@export Probe A - Category 2B threshold met, plain types
+GIVEN `monthly active UK users` IS A NUMBER
+      `direct messaging`        IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE `Category 2B threshold met (plain)` IF
+        `monthly active UK users` GREATER THAN 3000000
+    AND `direct messaging`
+
+-- Probe B: small-enterprise test with MAYBE NUMBER and the ordinary comparison words.
+@export Probe B - small enterprise, MAYBE NUMBER with ordinary comparisons
+GIVEN `group staff headcount` IS A MAYBE NUMBER
+      `annual turnover`       IS A MAYBE NUMBER
+GIVETH A BOOLEAN
+DECIDE `small enterprise (maybe)` IF
+        `group staff headcount` LESS THAN JUST 50
+    AND `annual turnover` AT MOST JUST 10000000
+
+-- Probe C: the same test negated, as a lawyer would write "Section 3 applies unless small".
+@export Probe C - Section 3 applies unless small, MAYBE NUMBER
+GIVEN `group staff headcount` IS A MAYBE NUMBER
+      `annual turnover`       IS A MAYBE NUMBER
+GIVETH A BOOLEAN
+DECIDE `Section 3 applies (maybe)` IF
+    NOT `small enterprise (maybe)` `group staff headcount` `annual turnover`
+
+-- Probe D: plain BOOLEAN version of T4 for the query planner.
+GIVEN `significant number of UK users`    IS A BOOLEAN
+      `UK is a target market`             IS A BOOLEAN
+      `capable of use in the UK`          IS A BOOLEAN
+      `material risk of significant harm` IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE `has links with the UK (plain)` IF
+        `significant number of UK users`
+     OR `UK is a target market`
+     OR (`capable of use in the UK` AND `material risk of significant harm`)
+
+#EVAL `small enterprise (maybe)` NOTHING (JUST 8000000)
+#EVAL `Section 3 applies (maybe)` NOTHING (JUST 8000000)
+#EVAL `small enterprise (maybe)` (JUST 60) (JUST 8000000)
+#EVAL `Section 3 applies (maybe)` (JUST 3) (JUST 200000)

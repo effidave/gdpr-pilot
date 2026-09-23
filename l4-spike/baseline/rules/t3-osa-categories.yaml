@@ -1,0 +1,61 @@
+# T3 - OSA categorisation thresholds, SI 2025/226, and the s.95 register
+# Source text quoted from the author's knowledge. NOT checked against legislation.gov.uk (blocked from this environment).
+cat1_threshold_met:
+  label: Category 1 threshold conditions met (user-to-user part)
+  cite:
+    instrument: Online Safety Act 2023 (Category 1, Category 2A and Category 2B Threshold Conditions) Regulations 2025 (SI 2025/226)
+    pinpoint: reg 3
+    version: as made (in force 27 February 2025)
+    verified: false
+    text: >-
+      ... in respect of the user-to-user part of that service, it (a) has an average number of monthly active United
+      Kingdom users that exceeds 34 million, and (b) uses a content recommender system; or ... (a) has an average
+      number of monthly active United Kingdom users that exceeds 7 million, (b) uses a content recommender system,
+      and (c) provides a functionality for users to forward or share regulated user-generated content on the service
+      with other users of that service.
+  expr:
+    any:
+      - all:
+          - gt: [ { fact: uk_monthly_active_users }, 34000000 ]
+          - { fact: content_recommender_system }
+      - all:
+          - gt: [ { fact: uk_monthly_active_users }, 7000000 ]
+          - { fact: content_recommender_system }
+          - { fact: forward_or_share_ugc }
+
+cat2b_threshold_met:
+  label: Category 2B threshold conditions met (user-to-user part)
+  cite:
+    instrument: SI 2025/226
+    pinpoint: reg 5
+    version: as made (in force 27 February 2025)
+    verified: false
+    text: >-
+      ... in respect of the user-to-user part of that service, it (a) has an average number of monthly active United
+      Kingdom users that exceeds 3 million, and (b) provides a functionality for users to send direct messages to
+      other users of the same service which is designed such that the message can only be viewed by the specific
+      recipients.
+  expr:
+    all:
+      - gt: [ { fact: uk_monthly_active_users }, 3000000 ]
+      - { fact: direct_messaging }
+
+cat1_on_register:
+  label: Entered in the Ofcom register as a Category 1 service
+  cite:
+    instrument: Online Safety Act 2023 (c. 50)
+    pinpoint: s.95
+    version: latest available (not verified)
+    verified: false
+    text: OFCOM must establish and publish a register of each regulated user-to-user service that meets the Category 1 threshold conditions ...
+  expr: { fact: ofcom_register_category_1 }
+
+cat2b_on_register:
+  label: Entered in the Ofcom register as a Category 2B service
+  cite:
+    instrument: Online Safety Act 2023 (c. 50)
+    pinpoint: s.95
+    version: latest available (not verified)
+    verified: false
+    text: OFCOM must establish and publish a register of each regulated user-to-user service that meets the Category 2B threshold conditions ...
+  expr: { fact: ofcom_register_category_2b }
