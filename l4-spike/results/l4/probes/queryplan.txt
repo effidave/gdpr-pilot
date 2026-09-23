@@ -1,0 +1,103 @@
+L4 REPL v0.1
+Type :help for help, :quit to exit
+
+Loading: /home/user/gdpr-pilot/l4-spike/rules/probes/queryplan.l4
+File loaded successfully.
+jl4> determined: Unknown
+next: significant
+stillNeeded atoms: 4
+  - 1 significant (atomId=2895cbf1-fea1-5b27-9669-679be096e34a)
+  - 2 target (atomId=309e37cd-baed-50a9-b7c2-20c6ac6599cb)
+  - 3 capable (atomId=f41e77d7-3b91-52e6-9b52-a4e42729117b)
+  - 4 risk (atomId=ca206a9a-17e5-50e1-8413-d2889cee9835)
+
+inputs (top): 4 of 4
+  - significant (score=4.250, atoms=1)
+  - target (score=4.250, atoms=1)
+  - capable (score=1.750, atoms=1)
+  - risk (score=1.750, atoms=1)
+
+asks (top): 4 of 4
+  - significant (score=4.250, atoms=1)
+  - target (score=4.250, atoms=1)
+  - capable (score=1.750, atoms=1)
+  - risk (score=1.750, atoms=1)
+
+jl4> determined: True
+next: (none)
+stillNeeded atoms: 0
+
+inputs (top): 0 of 0
+
+asks (top): 0 of 0
+
+jl4> determined: Unknown
+next: capable
+stillNeeded atoms: 2
+  - 3 capable (atomId=f41e77d7-3b91-52e6-9b52-a4e42729117b)
+  - 4 risk (atomId=ca206a9a-17e5-50e1-8413-d2889cee9835)
+
+inputs (top): 2 of 2
+  - capable (score=4.500, atoms=1)
+  - risk (score=4.500, atoms=1)
+
+asks (top): 2 of 2
+  - capable (score=4.500, atoms=1)
+  - risk (score=4.500, atoms=1)
+
+jl4> determined: Unknown
+next: users
+stillNeeded atoms: 3
+  - 7 users GREATER THAN 7000000 (atomId=bf6b54bb-5735-5a4c-8bc4-76745d4642ad)
+  - 8 forwarding (atomId=a6acbab1-5c7d-579f-8d19-79b0c9e2326f)
+  - 14 users GREATER THAN 34000000 (atomId=0c1fecae-f813-5f5f-b6f2-785ab0b34b66)
+
+inputs (top): 3 of 3
+  - users (score=4.167, atoms=2)
+  - recommender (score=2.167, atoms=1)
+  - forwarding (score=2.000, atoms=1)
+
+asks (top): 3 of 3
+  - users (score=4.167, atoms=2)
+  - recommender (score=2.167, atoms=1)
+  - forwarding (score=2.000, atoms=1)
+
+jl4> determined: Unknown
+next: users
+stillNeeded atoms: 3
+  - 7 users GREATER THAN 7000000 (atomId=bf6b54bb-5735-5a4c-8bc4-76745d4642ad)
+  - 8 forwarding (atomId=a6acbab1-5c7d-579f-8d19-79b0c9e2326f)
+  - 14 users GREATER THAN 34000000 (atomId=0c1fecae-f813-5f5f-b6f2-785ab0b34b66)
+
+inputs (top): 3 of 3
+  - users (score=4.167, atoms=2)
+  - recommender (score=2.167, atoms=1)
+  - forwarding (score=2.000, atoms=1)
+
+asks (top): 2 of 2
+  - users (score=4.167, atoms=2)
+  - forwarding (score=2.000, atoms=1)
+
+jl4> Goodbye!
+L4 REPL v0.1
+Type :help for help, :quit to exit
+
+Loading: /home/user/gdpr-pilot/l4-spike/rules/probes/queryplan.l4
+File loaded successfully.
+jl4> Expected boolean value for users, got: 2500000
+jl4> determined: Unknown
+next: forwarding
+stillNeeded atoms: 2
+  - 7 users GREATER THAN 7000000 (atomId=bf6b54bb-5735-5a4c-8bc4-76745d4642ad)
+  - 8 forwarding (atomId=a6acbab1-5c7d-579f-8d19-79b0c9e2326f)
+
+inputs (top): 3 of 3
+  - forwarding (score=4.500, atoms=1)
+  - recommender (score=2.250, atoms=1)
+  - users (score=2.250, atoms=1)
+
+asks (top): 2 of 2
+  - forwarding (score=4.500, atoms=1)
+  - recommender (score=2.250, atoms=1)
+
+jl4> Goodbye!

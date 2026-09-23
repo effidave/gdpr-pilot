@@ -1,0 +1,11 @@
+L4 REPL v0.1
+Type :help for help, :quit to exit
+
+Loading: /home/user/gdpr-pilot/l4-spike/rules/probes/qp-tri.l4
+File loaded successfully.
+jl4> DECIDE declarations:
+  ukLinksTri
+
+jl4> Can only visualize, as a ladder diagram, a DECIDE that returns a boolean.
+jl4> Can only visualize, as a ladder diagram, a DECIDE that returns a boolean.
+jl4> Goodbye!

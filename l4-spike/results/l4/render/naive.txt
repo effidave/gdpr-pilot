@@ -1,0 +1,60 @@
+Naive
+=====
+
+
+Provisions
+
+• Category 2B threshold met (plain) holds if:
+    all of the following are true:
+    - monthly active UK users is more than 3,000,000
+    - direct messaging
+
+• Small enterprise (maybe) holds if:
+    all of the following are true:
+    - group staff headcount is less than JUST with 50
+    - annual turnover is at most JUST with 10,000,000
+
+• Section 3 applies (maybe) holds if it is not the case that small enterprise (maybe) with group staff headcount and annual turnover.
+
+• Has links with the UK (plain) holds if:
+    any of the following is true:
+    - significant number of UK users
+    - UK is a target market
+    - all of the following are true:
+      - capable of use in the UK
+      - material risk of significant harm
+
+• Category 2B threshold met (maybe) holds if:
+    all of the following are true:
+    - monthly active UK users is more than JUST with 3,000,000
+    - direct messaging
+
+
+Prelude
+
+
+Comparison Operators
+
+• __LEQ__ holds if:
+    depending on a:
+    - if it is NOTHING: FALSE
+    - if it is x:
+      depending on b:
+      - if it is NOTHING: FALSE
+      - if it is y: x is at most y
+
+• __LT__ holds if:
+    depending on a:
+    - if it is NOTHING: FALSE
+    - if it is x:
+      depending on b:
+      - if it is NOTHING: FALSE
+      - if it is y: x is less than y
+
+• __GT__ holds if:
+    depending on a:
+    - if it is NOTHING: FALSE
+    - if it is x:
+      depending on b:
+      - if it is NOTHING: FALSE
+      - if it is y: x is more than y

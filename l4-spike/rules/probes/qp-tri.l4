@@ -1,0 +1,8 @@
+-- probes/qp-tri.l4 - can the query planner work on the three-valued (MAYBE BOOLEAN) encoding?
+IMPORT prelude
+IMPORT kleene
+
+GIVEN significant IS A MAYBE BOOLEAN
+      target      IS A MAYBE BOOLEAN
+GIVETH A MAYBE BOOLEAN
+DECIDE ukLinksTri IS `any of` (LIST significant, target)

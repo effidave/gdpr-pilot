@@ -97,8 +97,8 @@ GIVETH A MAYBE BOOLEAN
 
 -- Calendar months later, same day of the month. (No end-of-month clamping: the
 -- spike's dates are all on the 1st. Recorded as a limitation in the report.)
-GIVEN d IS A DATE
-      n IS A NUMBER
+GIVEN n IS A NUMBER
+      d IS A DATE
 GIVETH A DATE
 `months after` n d MEANS
     Date (DATE_DAY d) (m PLUS 1) y

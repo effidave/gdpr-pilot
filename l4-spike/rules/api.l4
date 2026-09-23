@@ -1,0 +1,92 @@
+-- api.l4 - one entry point per test, each taking a single record of service facts.
+--
+-- Why this file exists: `l4 batch` (l4-ide 48fb400) generates an input wrapper that
+-- fails to parse when a MAYBE-typed parameter is followed by another parameter
+-- (see probes/batchbug.l4). Passing one record avoids that. It also lets T1 use the
+-- T5 result directly.
+
+IMPORT prelude
+IMPORT daydate
+IMPORT kleene
+IMPORT `t1-dsa-art19`
+IMPORT `t2-dsa-art33`
+IMPORT `t3-osa-categories`
+IMPORT `t4-osa-uk-links`
+IMPORT `t5-dsa-online-platform`
+
+DECLARE `Service facts` HAS
+    `evaluation date`                      IS A DATE
+    `monthly active UK users`              IS A MAYBE NUMBER
+    `average monthly active EU recipients` IS A MAYBE NUMBER
+    `group staff headcount`                IS A MAYBE NUMBER
+    `annual turnover`                      IS A MAYBE NUMBER
+    `annual balance sheet total`           IS A MAYBE NUMBER
+    `formerly micro or small`              IS A MAYBE BOOLEAN
+    `status lost on`                       IS A MAYBE DATE
+    `stores user content at request`       IS A MAYBE BOOLEAN
+    `public posting`                       IS A MAYBE BOOLEAN
+    `direct messaging`                     IS A MAYBE BOOLEAN
+    `content recommender system`           IS A MAYBE BOOLEAN
+    `forward or share functionality`       IS A MAYBE BOOLEAN
+    `capable of use in the UK`             IS A MAYBE BOOLEAN
+    `designated as VLOP`                   IS A MAYBE BOOLEAN
+    `notification date`                    IS A MAYBE DATE
+    `on register as Category 1`            IS A MAYBE BOOLEAN
+    `on register as Category 2B`           IS A MAYBE BOOLEAN
+    `significant number of UK users`       IS A Judgement
+    `UK is a target market`                IS A Judgement
+    `material risk of significant harm`    IS A Judgement
+    `hosting service judgement`            IS A Judgement
+    `dissemination judgement`              IS A Judgement
+    `minor ancillary exception`            IS A Judgement
+
+@export T5 - online platform (DSA Art 3(i))
+GIVEN s IS A `Service facts`
+GIVETH A MAYBE BOOLEAN
+`T5` s MEANS
+    `is an online platform` (s's `hosting service judgement`) (s's `stores user content at request`)
+                            (s's `dissemination judgement`) (s's `public posting`)
+                            (s's `minor ancillary exception`)
+
+@export T1 - DSA Art 19: does Chapter III Section 3 apply
+GIVEN s IS A `Service facts`
+GIVETH A LIST OF `Section 3 outcome`
+`T1` s MEANS
+    `Section 3 outcome for` (s's `evaluation date`) (`T5` s) (s's `designated as VLOP`)
+                            (s's `group staff headcount`) (s's `annual turnover`) (s's `annual balance sheet total`)
+                            (s's `formerly micro or small`) (s's `status lost on`)
+
+@export T1 detail - micro or small enterprise (Rec 2003/361/EC)
+GIVEN s IS A `Service facts`
+GIVETH A MAYBE BOOLEAN
+`T1 enterprise size` s MEANS
+    `micro or small enterprise` (s's `group staff headcount`) (s's `annual turnover`) (s's `annual balance sheet total`)
+
+@export T2 - DSA Art 33: VLOP status
+GIVEN s IS A `Service facts`
+GIVETH A LIST OF `VLOP status`
+`T2` s MEANS
+    `VLOP status on` (s's `evaluation date`) (s's `average monthly active EU recipients`)
+                     (s's `designated as VLOP`) (s's `notification date`)
+
+@export T3 - OSA categorisation (SI 2025/226 thresholds and s.95 register)
+GIVEN s IS A `Service facts`
+GIVETH AN `OSA category result`
+`T3` s MEANS
+    `OSA categorisation` (s's `monthly active UK users`) (s's `content recommender system`)
+                         (s's `forward or share functionality`) (s's `direct messaging`)
+                         (s's `on register as Category 1`) (s's `on register as Category 2B`)
+
+@export T4 - OSA s.4(5)-(6): links with the UK
+GIVEN s IS A `Service facts`
+GIVETH A MAYBE BOOLEAN
+`T4` s MEANS
+    `has links with the UK` (s's `significant number of UK users`) (s's `UK is a target market`)
+                            (s's `capable of use in the UK`) (s's `material risk of significant harm`)
+
+@export T4 detail - which limbs are satisfied
+GIVEN s IS A `Service facts`
+GIVETH A LIST OF `UK links limb`
+`T4 limbs` s MEANS
+    `satisfied limbs` (s's `significant number of UK users`) (s's `UK is a target market`)
+                      (s's `capable of use in the UK`) (s's `material risk of significant harm`)

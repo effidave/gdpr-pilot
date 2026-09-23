@@ -1,0 +1,325 @@
+Info | updateFileDiagnostics published different from new diagnostics - file diagnostics:
+File:     scenarios.l4
+  Hidden:   no
+  Range:    275:1-275:51
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    276:1-276:52
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    278:1-278:71
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    281:1-281:96
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    282:1-282:148
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    285:1-285:77
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    286:1-286:67
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    289:1-289:37
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    290:1-290:72
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    293:1-293:67
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    294:1-294:68
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    295:1-295:66
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    298:1-298:105
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    299:1-299:36
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    300:1-300:67
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    301:1-301:66
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    302:1-302:37
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  assertion satisfied
+File:     scenarios.l4
+  Hidden:   no
+  Range:    307:1-307:23
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message: 
+    LIST `Threshold met, not designated`, `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+File:     scenarios.l4
+  Hidden:   no
+  Range:    308:1-308:39
+  Source:   eval
+  Severity: DiagnosticSeverity_Information
+  Code:     <none>
+  Message:  NOTHING
+Evaluation[1] @ scenarios.l4:275:1-51
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[2] @ scenarios.l4:276:1-52
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[3] @ scenarios.l4:278:1-71
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[4] @ scenarios.l4:281:1-96
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[5] @ scenarios.l4:282:1-148
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[6] @ scenarios.l4:285:1-77
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[7] @ scenarios.l4:286:1-67
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[8] @ scenarios.l4:289:1-37
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[9] @ scenarios.l4:290:1-72
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[10] @ scenarios.l4:293:1-67
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[11] @ scenarios.l4:294:1-68
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[12] @ scenarios.l4:295:1-66
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[13] @ scenarios.l4:298:1-105
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[14] @ scenarios.l4:299:1-36
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[15] @ scenarios.l4:300:1-67
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[16] @ scenarios.l4:301:1-66
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[17] @ scenarios.l4:302:1-37
+
+Result:
+  assertion satisfied
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[18] @ scenarios.l4:307:1-23
+
+Result:
+  LIST `Threshold met, not designated`, `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+
+Evaluation[19] @ scenarios.l4:308:1-39
+
+Result:
+  NOTHING
+
+
+Trace:
+  (no trace captured; add #EVALTRACE to the directive)
+
+

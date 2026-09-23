@@ -1,0 +1,4 @@
+{"diagnostics":[],"input":{"direct messaging":true,"monthly active UK users":4000000},"output":[{"result":true,"trace":null}],"status":"success"}
+{"diagnostics":[],"input":{"monthly active UK users":4000000},"output":[{"result":{"error":"Missing required field 'direct messaging' in JSON object\n"},"trace":null}],"status":"success"}
+{"diagnostics":[],"input":{"direct messaging":true,"monthly active UK users":null},"output":[{"result":{"error":"Expected JSON number but got: Null\n"},"trace":null}],"status":"success"}
+{"diagnostics":[],"input":{"direct messagng":true,"monthly active UK users":4000000},"output":[{"result":{"error":"Missing required field 'direct messaging' in JSON object\n"},"trace":null}],"status":"success"}

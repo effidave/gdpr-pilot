@@ -1,0 +1,308 @@
+-- scenarios.l4 - the spike fixtures as L4 values, with #ASSERT regression tests
+-- and #EVALTRACE traces. Fixture values generated from fixtures/*.json by the snippet
+-- in REPORT.md; the assertions below are written by hand.
+
+IMPORT prelude
+IMPORT daydate
+IMPORT kleene
+IMPORT api
+
+`S1-J` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 40000
+    `average monthly active EU recipients` IS JUST 15000
+    `group staff headcount` IS JUST 3
+    `annual turnover` IS JUST 200000
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST FALSE
+    `content recommender system` IS JUST FALSE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST FALSE
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `UK is a target market` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS JUST FALSE, `decided by` IS "l4-spike author (test data only)", reason IS "Public posting is the principal service, not an ancillary feature"
+
+`S1-U` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 40000
+    `average monthly active EU recipients` IS JUST 15000
+    `group staff headcount` IS JUST 3
+    `annual turnover` IS JUST 200000
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST FALSE
+    `content recommender system` IS JUST FALSE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST FALSE
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS NOTHING, `decided by` IS "brief section 6 (provisional)", reason IS "Variant S1-U"
+    `UK is a target market` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S1` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 40000
+    `average monthly active EU recipients` IS JUST 15000
+    `group staff headcount` IS JUST 3
+    `annual turnover` IS JUST 200000
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST FALSE
+    `content recommender system` IS JUST FALSE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST FALSE
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `UK is a target market` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S2-U` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 4000000
+    `average monthly active EU recipients` IS JUST 2000000
+    `group staff headcount` IS NOTHING
+    `annual turnover` IS JUST 8000000
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS NOTHING
+    `public posting` IS JUST FALSE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST FALSE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST FALSE
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `dissemination judgement` IS Judgement WITH answer IS JUST FALSE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S2` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 4000000
+    `average monthly active EU recipients` IS JUST 2000000
+    `group staff headcount` IS JUST 60
+    `annual turnover` IS JUST 8000000
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS NOTHING
+    `public posting` IS JUST FALSE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST FALSE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST FALSE
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief"
+    `dissemination judgement` IS Judgement WITH answer IS JUST FALSE, `decided by` IS "brief section 6 (provisional)", reason IS "Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S3-D` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 20000000
+    `average monthly active EU recipients` IS JUST 50000000
+    `group staff headcount` IS JUST 800
+    `annual turnover` IS NOTHING
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST TRUE
+    `forward or share functionality` IS JUST TRUE
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST TRUE
+    `notification date` IS JUST (Date 1 8 2026)
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S3-J` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 20000000
+    `average monthly active EU recipients` IS JUST 50000000
+    `group staff headcount` IS JUST 800
+    `annual turnover` IS NOTHING
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST TRUE
+    `forward or share functionality` IS JUST TRUE
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST TRUE
+    `notification date` IS JUST (Date 1 3 2026)
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "l4-spike author (test data only)", reason IS "20m UK MAU"
+    `UK is a target market` IS Judgement WITH answer IS JUST TRUE, `decided by` IS "l4-spike author (test data only)", reason IS "Test data"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS JUST FALSE, `decided by` IS "l4-spike author (test data only)", reason IS "Public posting is the principal service"
+
+`S3-U` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 20000000
+    `average monthly active EU recipients` IS JUST 50000000
+    `group staff headcount` IS JUST 800
+    `annual turnover` IS NOTHING
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST TRUE
+    `forward or share functionality` IS JUST TRUE
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS NOTHING
+    `notification date` IS NOTHING
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S3` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 20000000
+    `average monthly active EU recipients` IS JUST 50000000
+    `group staff headcount` IS JUST 800
+    `annual turnover` IS NOTHING
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS JUST TRUE
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST TRUE
+    `forward or share functionality` IS JUST TRUE
+    `capable of use in the UK` IS JUST TRUE
+    `designated as VLOP` IS JUST TRUE
+    `notification date` IS JUST (Date 1 3 2026)
+    `on register as Category 1` IS JUST FALSE
+    `on register as Category 2B` IS JUST FALSE
+    `significant number of UK users` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+`S4` MEANS `Service facts` WITH
+    `evaluation date` IS Date 23 9 2026
+    `monthly active UK users` IS JUST 2500000
+    `average monthly active EU recipients` IS NOTHING
+    `group staff headcount` IS NOTHING
+    `annual turnover` IS NOTHING
+    `annual balance sheet total` IS NOTHING
+    `formerly micro or small` IS NOTHING
+    `status lost on` IS NOTHING
+    `stores user content at request` IS NOTHING
+    `public posting` IS JUST TRUE
+    `direct messaging` IS JUST TRUE
+    `content recommender system` IS JUST TRUE
+    `forward or share functionality` IS NOTHING
+    `capable of use in the UK` IS NOTHING
+    `designated as VLOP` IS NOTHING
+    `notification date` IS NOTHING
+    `on register as Category 1` IS NOTHING
+    `on register as Category 2B` IS NOTHING
+    `significant number of UK users` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `UK is a target market` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `material risk of significant harm` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `hosting service judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `dissemination judgement` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+    `minor ancillary exception` IS Judgement WITH answer IS NOTHING, `decided by` IS "", reason IS "no judgement given"
+
+-- ---------------------------------------------------------------------------
+-- Regression tests: the missing-fact variants (section 6 of the brief)
+-- ---------------------------------------------------------------------------
+
+-- S2-U: staff count unknown -> enterprise size undetermined, not "no".
+#ASSERT `T1 enterprise size` `S2-U` EQUALS NOTHING
+#ASSERT `T1 enterprise size` `S2` EQUALS JUST FALSE
+-- ... but T1 as a whole is still settled, because S2 is not an online platform.
+#ASSERT `T1` `S2-U` EQUALS LIST `Not relevant: not an online platform`
+
+-- S3-U: designation unknown -> threshold met, designation outcome still open.
+#ASSERT `VLOP threshold met` (`S3-U`'s `average monthly active EU recipients`) EQUALS JUST TRUE
+#ASSERT `T2` `S3-U` EQUALS LIST `Threshold met, not designated`, `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+
+-- S3-D: designated (and notified) 2026-08-01 -> obligations from 2026-12-01.
+#ASSERT `T2` `S3-D` EQUALS LIST `Designated, obligations not yet applicable`
+#ASSERT `T2` `S3` EQUALS LIST `Designated, obligations applicable`
+
+-- S1-U: significant-users judgement undetermined, target-market limb still settles it.
+#ASSERT `T4` `S1-U` EQUALS JUST TRUE
+#ASSERT `T4 limbs` `S1-U` EQUALS LIST `s.4(5)(b) UK is a target market`
+
+-- S4: 2.5m UK users settles both OSA thresholds as "not met" despite unknown resharing.
+#ASSERT (`T3` `S4`)'s `Category 1 threshold met` EQUALS JUST FALSE
+#ASSERT (`T3` `S4`)'s `Category 2B threshold met` EQUALS JUST FALSE
+#ASSERT (`T3` `S4`)'s `Category 1 on the register` EQUALS NOTHING
+
+-- The base services
+#ASSERT `T1` `S1-J` EQUALS LIST `Section 3 does not apply, except Art 24(3) (micro or small enterprise)`
+#ASSERT `T5` `S2` EQUALS JUST FALSE
+#ASSERT (`T3` `S2`)'s `Category 2B threshold met` EQUALS JUST TRUE
+#ASSERT (`T3` `S3`)'s `Category 1 threshold met` EQUALS JUST TRUE
+#ASSERT `T5` `S3-J` EQUALS JUST TRUE
+
+-- ---------------------------------------------------------------------------
+-- Traces
+-- ---------------------------------------------------------------------------
+#EVALTRACE `T2` `S3-U`
+#EVALTRACE `T1 enterprise size` `S2-U`

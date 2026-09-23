@@ -1,0 +1,72 @@
+Online Safety Act 2023 s.4(5)-(6) - links with the United Kingdom
+=================================================================
+
+
+Definitions
+
+• UK links limb means one of:
+    - s.4(5)(a) significant number of UK users
+    - s.4(5)(b) UK is a target market
+    - s.4(6) capable of use in the UK and material risk of significant harm
+
+
+Provisions
+
+• Limb 5(a) means the answer to the judgement.
+
+• Limb 5(b) means the answer to the judgement.
+
+• Limb 6 means all of list of capable of use in the UK and the answer to the judgement.
+
+• Has links with the UK means any of list of limb 5(a) with the judgement significant number of UK users, limb 5(b) with the judgement UK is a target market and limb 6 with capable of use in the UK and the judgement material risk of significant harm.
+
+• Listed if yes means:
+    - if x is JUST with TRUE: list of the uk links limb
+    - otherwise: EMPTY
+
+• Satisfied limbs means all the lists in list of listed if yes with limb 5(a) with significant number of UK users and s.4(5)(a) significant number of UK users, listed if yes with limb 5(b) with UK is a target market and s.4(5)(b) UK is a target market and listed if yes with limb 6 with capable of use in the UK and material risk of significant harm and s.4(6) capable of use in the UK and material risk of significant harm joined together.
+
+
+Prelude
+
+
+Lists — Construction
+
+• Append means list1 followed by list2.
+
+• Concat means all the lists in lists joined together.
+
+
+Ranges, Sorting & Search
+
+• Elem holds if x is one of list.
+
+
+Imported definitions
+
+
+kleene
+
+
+Three-valued connectives
+
+Definitions:
+
+• Judgement means a record with:
+    - answer — MAYBE of BOOLEAN
+    - decided by — STRING
+    - reason — STRING
+
+Provisions:
+
+• The answer to means the judgement's answer.
+
+• All of means:
+    - if JUST with FALSE is one of xs: JUST with FALSE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with TRUE
+
+• Any of means:
+    - if JUST with TRUE is one of xs: JUST with TRUE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with FALSE

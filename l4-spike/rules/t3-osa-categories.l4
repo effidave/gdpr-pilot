@@ -45,11 +45,11 @@ GIVEN `monthly active UK users`        IS A MAYBE NUMBER   @desc average monthly
       `forward or share functionality` IS A MAYBE BOOLEAN  @desc users can forward or share user-generated content; null if unknown
 GIVETH A MAYBE BOOLEAN
 `Category 1 threshold met` MEANS
-    `any of` (LIST (`all of` (LIST (`more than` `monthly active UK users` 34000000)
-                                  `content recommender system`))
-                   (`all of` (LIST (`more than` `monthly active UK users` 7000000)
-                                  `content recommender system`
-                                  `forward or share functionality`)))
+    `any of` (LIST `all of` (LIST `more than` `monthly active UK users` 34000000,
+                                 `content recommender system`),
+                   `all of` (LIST `more than` `monthly active UK users` 7000000,
+                                 `content recommender system`,
+                                 `forward or share functionality`))
 
 @export Category 2B threshold conditions met (SI 2025/226 reg 5). Returns yes, no or undetermined (null).
 @ref si-2025-226 reg 5
@@ -57,7 +57,7 @@ GIVEN `monthly active UK users` IS A MAYBE NUMBER   @desc average monthly active
       `direct messaging`        IS A MAYBE BOOLEAN  @desc users can send direct messages viewable only by the recipients; null if unknown
 GIVETH A MAYBE BOOLEAN
 `Category 2B threshold met` MEANS
-    `all of` (LIST (`more than` `monthly active UK users` 3000000)
+    `all of` (LIST `more than` `monthly active UK users` 3000000,
                    `direct messaging`)
 
 DECLARE `OSA category result` HAS

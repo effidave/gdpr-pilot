@@ -1,0 +1,21 @@
+-- probes/queryplan.l4 - plain-identifier copies of two rules for the REPL :queryplan
+-- command, which cannot address backtick names containing spaces.
+IMPORT prelude
+
+GIVEN significant IS A BOOLEAN
+      target      IS A BOOLEAN
+      capable     IS A BOOLEAN
+      risk        IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE ukLinks IF
+        significant
+     OR target
+     OR (capable AND risk)
+
+GIVEN users      IS A NUMBER
+      recommender IS A BOOLEAN
+      forwarding  IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE category1 IF
+        (users GREATER THAN 34000000 AND recommender)
+     OR (users GREATER THAN 7000000 AND recommender AND forwarding)

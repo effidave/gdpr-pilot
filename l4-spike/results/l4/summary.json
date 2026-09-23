@@ -1,0 +1,92 @@
+{
+  "S1-J": {
+    "T1": "Section 3 does not apply, except Art 24(3) (micro or small enterprise)",
+    "T1 enterprise size": "true",
+    "T2": "Threshold not met",
+    "T3": "{\"OSA category result\":[false,false,false,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(a) significant number of UK users | s.4(5)(b) UK is a target market",
+    "T5": "true"
+  },
+  "S1-U": {
+    "T1": "Not relevant: not an online platform | Section 3 does not apply, except Art 24(3) (micro or small enterprise)",
+    "T1 enterprise size": "true",
+    "T2": "Threshold not met",
+    "T3": "{\"OSA category result\":[false,false,false,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(b) UK is a target market",
+    "T5": "null"
+  },
+  "S1": {
+    "T1": "Not relevant: not an online platform | Section 3 does not apply, except Art 24(3) (micro or small enterprise)",
+    "T1 enterprise size": "true",
+    "T2": "Threshold not met",
+    "T3": "{\"OSA category result\":[false,false,false,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(a) significant number of UK users | s.4(5)(b) UK is a target market",
+    "T5": "null"
+  },
+  "S2-U": {
+    "T1": "Not relevant: not an online platform",
+    "T1 enterprise size": "null",
+    "T2": "Threshold not met",
+    "T3": "{\"OSA category result\":[false,false,true,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(a) significant number of UK users",
+    "T5": "false"
+  },
+  "S2": {
+    "T1": "Not relevant: not an online platform",
+    "T1 enterprise size": "false",
+    "T2": "Threshold not met",
+    "T3": "{\"OSA category result\":[false,false,true,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(a) significant number of UK users",
+    "T5": "false"
+  },
+  "S3-D": {
+    "T1": "Not relevant: not an online platform | Section 3 applies (Art 19(2): designated VLOP)",
+    "T1 enterprise size": "false",
+    "T2": "Designated, obligations not yet applicable",
+    "T3": "{\"OSA category result\":[true,false,true,false]}",
+    "T4": "null",
+    "T4 limbs": "",
+    "T5": "null"
+  },
+  "S3-J": {
+    "T1": "Section 3 applies (Art 19(2): designated VLOP)",
+    "T1 enterprise size": "false",
+    "T2": "Designated, obligations applicable",
+    "T3": "{\"OSA category result\":[true,false,true,false]}",
+    "T4": "true",
+    "T4 limbs": "s.4(5)(a) significant number of UK users | s.4(5)(b) UK is a target market",
+    "T5": "true"
+  },
+  "S3-U": {
+    "T1": "Not relevant: not an online platform | Section 3 applies (Art 19(2): designated VLOP) | Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status) | Section 3 applies",
+    "T1 enterprise size": "false",
+    "T2": "Threshold met, not designated | Designated, obligations not yet applicable | Designated, obligations applicable",
+    "T3": "{\"OSA category result\":[true,false,true,false]}",
+    "T4": "null",
+    "T4 limbs": "",
+    "T5": "null"
+  },
+  "S3": {
+    "T1": "Not relevant: not an online platform | Section 3 applies (Art 19(2): designated VLOP)",
+    "T1 enterprise size": "false",
+    "T2": "Designated, obligations applicable",
+    "T3": "{\"OSA category result\":[true,false,true,false]}",
+    "T4": "null",
+    "T4 limbs": "",
+    "T5": "null"
+  },
+  "S4": {
+    "T1": "Not relevant: not an online platform | Section 3 applies (Art 19(2): designated VLOP) | Section 3 does not apply, except Art 24(3) (micro or small enterprise) | Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status) | Section 3 applies",
+    "T1 enterprise size": "null",
+    "T2": "Threshold not met | Threshold met, not designated | Designated, obligations not yet applicable | Designated, obligations applicable",
+    "T3": "{\"OSA category result\":[false,null,false,null]}",
+    "T4": "null",
+    "T4 limbs": "",
+    "T5": "null"
+  }
+}

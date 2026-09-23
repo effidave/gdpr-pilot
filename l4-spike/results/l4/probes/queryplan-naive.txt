@@ -1,0 +1,18 @@
+L4 REPL v0.1
+Type :help for help, :quit to exit
+
+Loading: /home/user/gdpr-pilot/l4-spike/rules/probes/naive.l4
+File loaded successfully.
+jl4> DECIDE declarations:
+  Category 2B threshold met (plain)
+  small enterprise (maybe)
+  Section 3 applies (maybe)
+  has links with the UK (plain)
+  Category 2B threshold met (maybe)
+
+jl4> No DECIDE named `has. Available: Category 2B threshold met (plain), small enterprise (maybe), Section 3 applies (maybe), has links with the UK (plain), Category 2B threshold met (maybe)
+jl4> No DECIDE named `has. Available: Category 2B threshold met (plain), small enterprise (maybe), Section 3 applies (maybe), has links with the UK (plain), Category 2B threshold met (maybe)
+jl4> No DECIDE named `has. Available: Category 2B threshold met (plain), small enterprise (maybe), Section 3 applies (maybe), has links with the UK (plain), Category 2B threshold met (maybe)
+jl4> No DECIDE named `Category. Available: Category 2B threshold met (plain), small enterprise (maybe), Section 3 applies (maybe), has links with the UK (plain), Category 2B threshold met (maybe)
+jl4> No DECIDE named `Category. Available: Category 2B threshold met (plain), small enterprise (maybe), Section 3 applies (maybe), has links with the UK (plain), Category 2B threshold met (maybe)
+jl4> Goodbye!

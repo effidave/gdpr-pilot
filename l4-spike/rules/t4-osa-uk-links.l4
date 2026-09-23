@@ -50,8 +50,8 @@ GIVEN `capable of use in the UK`         IS A MAYBE BOOLEAN
       `material risk of significant harm` IS A Judgement
 GIVETH A MAYBE BOOLEAN
 `limb 6` MEANS
-    `all of` (LIST `capable of use in the UK`
-                   (`the answer to` `material risk of significant harm`))
+    `all of` (LIST `capable of use in the UK`,
+                   `the answer to` `material risk of significant harm`)
 
 @export The service has links with the United Kingdom (OSA 2023 s.4(5)-(6)). Returns yes, no or undetermined (null).
 @ref osa-s4 s.4(5)-(6)
@@ -61,19 +61,27 @@ GIVEN `significant number of UK users`    IS A Judgement      @desc s.4(5)(a) ju
       `material risk of significant harm` IS A Judgement      @desc s.4(6)(b) judgement
 GIVETH A MAYBE BOOLEAN
 `has links with the UK` MEANS
-    `any of` (LIST (`limb 5(a)` `significant number of UK users`)
-                   (`limb 5(b)` `UK is a target market`)
-                   (`limb 6` `capable of use in the UK` `material risk of significant harm`))
+    `any of` (LIST `limb 5(a)` `significant number of UK users`,
+                   `limb 5(b)` `UK is a target market`,
+                   `limb 6` `capable of use in the UK` `material risk of significant harm`)
 
 -- Which limbs are satisfied (for the explanation).
-GIVEN `significant number of UK users`    IS A Judgement
-      `UK is a target market`             IS A Judgement
-      `capable of use in the UK`          IS A MAYBE BOOLEAN
-      `material risk of significant harm` IS A Judgement
+GIVEN x    IS A MAYBE BOOLEAN
+      limb IS A `UK links limb`
+GIVETH A LIST OF `UK links limb`
+`listed if yes` x limb MEANS
+    IF x EQUALS JUST TRUE THEN LIST limb ELSE EMPTY
+
+@export Which s.4(5)-(6) limbs are satisfied. Undetermined limbs are not listed.
+GIVEN `significant number of UK users`    IS A Judgement      @desc s.4(5)(a) judgement
+      `UK is a target market`             IS A Judgement      @desc s.4(5)(b) judgement
+      `capable of use in the UK`          IS A MAYBE BOOLEAN  @desc s.4(6)(a) fact; null if unknown
+      `material risk of significant harm` IS A Judgement      @desc s.4(6)(b) judgement
 GIVETH A LIST OF `UK links limb`
 `satisfied limbs` MEANS
-    map snd (filter (GIVEN x YIELD fst x EQUALS JUST TRUE) rows)
-    WHERE rows MEANS
-        LIST (PAIR OF (`limb 5(a)` `significant number of UK users`), `s.4(5)(a) significant number of UK users`),
-             (PAIR OF (`limb 5(b)` `UK is a target market`), `s.4(5)(b) UK is a target market`),
-             (PAIR OF (`limb 6` `capable of use in the UK` `material risk of significant harm`), `s.4(6) capable of use in the UK and material risk of significant harm`)
+    concat (LIST `listed if yes` (`limb 5(a)` `significant number of UK users`)
+                                 `s.4(5)(a) significant number of UK users`,
+                 `listed if yes` (`limb 5(b)` `UK is a target market`)
+                                 `s.4(5)(b) UK is a target market`,
+                 `listed if yes` (`limb 6` `capable of use in the UK` `material risk of significant harm`)
+                                 `s.4(6) capable of use in the UK and material risk of significant harm`)

@@ -69,6 +69,6 @@ GIVEN `hosting service judgement`         IS A Judgement      @desc Art 3(g)(iii
       `minor ancillary exception`         IS A Judgement      @desc Art 3(i) exception judgement
 GIVETH A MAYBE BOOLEAN
 `is an online platform` MEANS
-    `all of` (LIST (`is a hosting service` `hosting service judgement` `stores user content at request`)
-                   (`disseminates to the public` `dissemination judgement` `public posting`)
-                   (`not` (`the answer to` `minor ancillary exception`)))
+    `all of` (LIST `is a hosting service` `hosting service judgement` `stores user content at request`,
+                   `disseminates to the public` `dissemination judgement` `public posting`,
+                   `not` (`the answer to` `minor ancillary exception`))

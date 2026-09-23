@@ -58,9 +58,9 @@ GIVEN `group staff headcount`    IS A MAYBE NUMBER
       `annual balance sheet total` IS A MAYBE NUMBER
 GIVETH A MAYBE BOOLEAN
 `micro or small enterprise` MEANS
-    `all of` (LIST (`less than` `group staff headcount` 50)
-                   (`any of` (LIST (`at most` `annual turnover` 10000000)
-                                   (`at most` `annual balance sheet total` 10000000))))
+    `all of` (LIST `less than` `group staff headcount` 50,
+                   `any of` (LIST `at most` `annual turnover` 10000000,
+                                  `at most` `annual balance sheet total` 10000000))
 
 @ref dsa-art19 Art 19(1) second subparagraph
 GIVEN `evaluation date`          IS A DATE
@@ -68,8 +68,8 @@ GIVEN `evaluation date`          IS A DATE
       `status lost on`           IS A MAYBE DATE
 GIVETH A MAYBE BOOLEAN
 `within 12 months of losing the status` MEANS
-    `all of` (LIST `formerly micro or small`
-                   (`before` `evaluation date` (`months after maybe` 12 `status lost on`)))
+    `all of` (LIST `formerly micro or small`,
+                   `before` `evaluation date` (`months after maybe` 12 `status lost on`))
 
 @export Does DSA Chapter III Section 3 (Arts 19-28) apply? Returns every outcome still possible; one item means settled.
 @ref dsa-art19 Art 19(1)-(2)

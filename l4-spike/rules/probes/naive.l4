@@ -46,3 +46,15 @@ DECIDE `has links with the UK (plain)` IF
 #EVAL `Section 3 applies (maybe)` NOTHING (JUST 8000000)
 #EVAL `small enterprise (maybe)` (JUST 60) (JUST 8000000)
 #EVAL `Section 3 applies (maybe)` (JUST 3) (JUST 200000)
+
+-- Probe E: the direction that matters most - a duty wrongly reported as NOT applying.
+@export Probe E - Category 2B threshold met, MAYBE NUMBER with ordinary comparison
+GIVEN `monthly active UK users` IS A MAYBE NUMBER
+      `direct messaging`        IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE `Category 2B threshold met (maybe)` IF
+        `monthly active UK users` GREATER THAN JUST 3000000
+    AND `direct messaging`
+
+#EVAL `Category 2B threshold met (maybe)` NOTHING TRUE
+#EVAL `Category 2B threshold met (maybe)` (JUST 4000000) TRUE

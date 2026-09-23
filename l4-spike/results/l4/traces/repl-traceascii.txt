@@ -1,0 +1,308 @@
+L4 REPL v0.1
+Type :help for help, :quit to exit
+
+Loading: /home/user/gdpr-pilot/l4-spike/rules/traces.l4
+File loaded successfully.
+jl4> Result: LIST `Threshold met, not designated`, `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+
+Trace:
+┌ `VLOP status on` OF (Date OF 23, 9, 2026), (JUST OF 50000000), NOTHING, NOTHING
+│┌ JUST OF 50000000
+│└ JUST OF 50000000
+│┌ `VLOP status on`
+│└ <function>
+├ `possible outcomes` OF (LIST (PAIR OF (not OF (`VLOP threshold met` OF `average monthly active EU recipients`)), `Threshold not met`), (PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`), (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`)), `Designated, obligations applicable`
+│┌ LIST (PAIR OF (not OF (`VLOP threshold met` OF `average monthly active EU recipients`)), `Threshold not met`), (PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`), (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`)
+│├ (PAIR OF (not OF (`VLOP threshold met` OF `average monthly active EU recipients`)), `Threshold not met`) FOLLOWED BY (LIST (PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`), (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`))
+││┌ PAIR OF (not OF (`VLOP threshold met` OF `average monthly active EU recipients`)), `Threshold not met`
+│││┌ not OF (`VLOP threshold met` OF `average monthly active EU recipients`)
+││││┌ `VLOP threshold met` OF `average monthly active EU recipients`
+│││││┌ `VLOP threshold met`
+│││││└ <function>
+││││├ `at least` OF `average monthly active EU recipients`, 45000000
+│││││┌ `at least`
+│││││└ <function>
+││││├ CONSIDER a WHEN JUST x THEN JUST OF (x AT LEAST b),
+│││││              WHEN NOTHING THEN NOTHING
+││││├ JUST OF (x AT LEAST b)
+│││││┌ x AT LEAST b
+│││││└ TRUE
+││││└ JUST OF TRUE
+││││┌ not
+││││└ <function>
+│││├ CONSIDER x WHEN JUST b THEN JUST OF (NOT b),
+││││              WHEN NOTHING THEN NOTHING
+│││├ JUST OF (NOT b)
+││││┌ NOT b
+││││├ IF a THEN FALSE ELSE TRUE
+│││││┌ a
+│││││└ TRUE
+││││├ FALSE
+││││└ FALSE
+│││└ JUST OF FALSE
+││└ PAIR OF (JUST OF FALSE), (...)
+││┌ LIST (PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`), (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`)
+││├ (PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`) FOLLOWED BY (LIST (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`))
+│││┌ PAIR OF (not OF `designated as VLOP`), `Threshold met, not designated`
+││││┌ not OF `designated as VLOP`
+│││││┌ not
+│││││└ <function>
+││││├ CONSIDER x WHEN JUST b THEN JUST OF (NOT b),
+│││││              WHEN NOTHING THEN NOTHING
+││││├ NOTHING
+││││└ NOTHING
+│││└ PAIR OF NOTHING, `Threshold met, not designated`
+│││┌ LIST (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`)
+│││├ (PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`) FOLLOWED BY (LIST )
+││││┌ PAIR OF (`obligations not yet applicable` OF `evaluation date`, `notification date`), `Designated, obligations not yet applicable`
+│││││┌ `obligations not yet applicable` OF `evaluation date`, `notification date`
+││││││┌ `obligations not yet applicable`
+││││││└ <function>
+│││││├ before OF `evaluation date`, (`months after maybe` OF 4, `notification date`)
+││││││┌ `months after maybe` OF 4, `notification date`
+│││││││┌ `months after maybe`
+│││││││└ <function>
+││││││├ CONSIDER d WHEN JUST x THEN JUST OF (`months after` OF n, x),
+│││││││              WHEN NOTHING THEN NOTHING
+││││││├ NOTHING
+││││││└ NOTHING
+││││││┌ before
+││││││└ <function>
+│││││├ CONSIDER deadline WHEN JUST d THEN JUST OF (day LESS THAN d),
+││││││                     WHEN NOTHING THEN NOTHING
+│││││├ NOTHING
+│││││└ NOTHING
+││││└ PAIR OF NOTHING, `Designated, obligations not yet applicable`
+││││┌ LIST 
+││││└ EMPTY
+│││└ LIST PAIR OF NOTHING, `Designated, obligations not yet applicable`
+││└ LIST PAIR OF NOTHING, `Threshold met, not designated`, PAIR OF NOTHING, `Designated, obligations not yet applicable`
+│└ LIST PAIR OF (JUST OF FALSE), (...), PAIR OF NOTHING, `Threshold met, not designated`, PAIR OF NOTHING, `Designated, obligations not yet applicable`
+│┌ `possible outcomes`
+│└ <function>
+├ CONSIDER rows WHEN EMPTY THEN LIST default,
+│                 WHEN r FOLLOWED BY rest THEN IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+├ IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+│┌ (fst OF r) EQUALS (JUST OF TRUE)
+││┌ fst OF r
+│││┌ fst
+│││└ <function>
+││├ CONSIDER PAIR WHEN PAIR fst
+│││                          snd THEN fst
+││├ fst
+││└ JUST OF FALSE
+││┌ JUST OF TRUE
+││└ JUST OF TRUE
+│└ FALSE
+├ IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default))
+│┌ (fst OF r) EQUALS (JUST OF FALSE)
+││┌ fst OF r
+│││┌ fst
+│││└ <function>
+││├ CONSIDER PAIR WHEN PAIR fst
+│││                          snd THEN fst
+││├ fst
+││└ JUST OF FALSE
+││┌ JUST OF FALSE
+││└ JUST OF FALSE
+│└ TRUE
+├ `possible outcomes` OF rest, default
+│┌ `possible outcomes`
+│└ <function>
+├ CONSIDER rows WHEN EMPTY THEN LIST default,
+│                 WHEN r FOLLOWED BY rest THEN IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+├ IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+│┌ (fst OF r) EQUALS (JUST OF TRUE)
+││┌ fst OF r
+│││┌ fst
+│││└ <function>
+││├ CONSIDER PAIR WHEN PAIR fst
+│││                          snd THEN fst
+││├ fst
+││└ NOTHING
+││┌ JUST OF TRUE
+││└ JUST OF TRUE
+│└ FALSE
+├ IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default))
+│┌ (fst OF r) EQUALS (JUST OF FALSE)
+││┌ fst OF r
+│││┌ fst
+│││└ <function>
+││├ CONSIDER PAIR WHEN PAIR fst
+│││                          snd THEN fst
+││├ fst
+││└ NOTHING
+││┌ JUST OF FALSE
+││└ JUST OF FALSE
+│└ FALSE
+├ (snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)
+│┌ snd OF r
+││┌ snd
+││└ <function>
+│├ CONSIDER PAIR WHEN PAIR fst
+││                          snd THEN snd
+│├ snd
+│└ `Threshold met, not designated`
+│┌ `possible outcomes` OF rest, default
+││┌ `possible outcomes`
+││└ <function>
+│├ CONSIDER rows WHEN EMPTY THEN LIST default,
+││                 WHEN r FOLLOWED BY rest THEN IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+│├ IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+││┌ (fst OF r) EQUALS (JUST OF TRUE)
+│││┌ fst OF r
+││││┌ fst
+││││└ <function>
+│││├ CONSIDER PAIR WHEN PAIR fst
+││││                          snd THEN fst
+│││├ fst
+│││└ NOTHING
+│││┌ JUST OF TRUE
+│││└ JUST OF TRUE
+││└ FALSE
+│├ IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default))
+││┌ (fst OF r) EQUALS (JUST OF FALSE)
+│││┌ fst OF r
+││││┌ fst
+││││└ <function>
+│││├ CONSIDER PAIR WHEN PAIR fst
+││││                          snd THEN fst
+│││├ fst
+│││└ NOTHING
+│││┌ JUST OF FALSE
+│││└ JUST OF FALSE
+││└ FALSE
+│├ (snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)
+││┌ snd OF r
+│││┌ snd
+│││└ <function>
+││├ CONSIDER PAIR WHEN PAIR fst
+│││                          snd THEN snd
+││├ snd
+││└ `Designated, obligations not yet applicable`
+││┌ `possible outcomes` OF rest, default
+│││┌ `possible outcomes`
+│││└ <function>
+││├ CONSIDER rows WHEN EMPTY THEN LIST default,
+│││                 WHEN r FOLLOWED BY rest THEN IF ((fst OF r) EQUALS (JUST OF TRUE)) THEN (LIST (snd OF r)) ELSE (IF ((fst OF r) EQUALS (JUST OF FALSE)) THEN (`possible outcomes` OF rest, default) ELSE ((snd OF r) FOLLOWED BY (`possible outcomes` OF rest, default)))
+││├ LIST default
+││├ default FOLLOWED BY (LIST )
+│││┌ LIST 
+│││└ EMPTY
+││└ LIST `Designated, obligations applicable`
+│└ LIST `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+└ LIST `Threshold met, not designated`, `Designated, obligations not yet applicable`, `Designated, obligations applicable`
+
+jl4> Result: NOTHING
+
+Trace:
+┌ `micro or small enterprise` OF NOTHING, (JUST OF 8000000), NOTHING
+│┌ JUST OF 8000000
+│└ JUST OF 8000000
+│┌ `micro or small enterprise`
+│└ <function>
+├ `all of` OF (LIST (`less than` OF `group staff headcount`, 50), (`any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000))))
+│┌ LIST (`less than` OF `group staff headcount`, 50), (`any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000)))
+│├ (`less than` OF `group staff headcount`, 50) FOLLOWED BY (LIST (`any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000))))
+││┌ `less than` OF `group staff headcount`, 50
+│││┌ `less than`
+│││└ <function>
+││├ CONSIDER a WHEN JUST x THEN JUST OF (x LESS THAN b),
+│││              WHEN NOTHING THEN NOTHING
+││├ NOTHING
+││└ NOTHING
+││┌ LIST (`any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000)))
+││├ (`any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000))) FOLLOWED BY (LIST )
+│││┌ `any of` OF (LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000))
+││││┌ LIST (`at most` OF `annual turnover`, 10000000), (`at most` OF `annual balance sheet total`, 10000000)
+││││├ (`at most` OF `annual turnover`, 10000000) FOLLOWED BY (LIST (`at most` OF `annual balance sheet total`, 10000000))
+│││││┌ `at most` OF `annual turnover`, 10000000
+││││││┌ `at most`
+││││││└ <function>
+│││││├ CONSIDER a WHEN JUST x THEN JUST OF (x AT MOST b),
+││││││              WHEN NOTHING THEN NOTHING
+│││││├ JUST OF (x AT MOST b)
+││││││┌ x AT MOST b
+││││││└ TRUE
+│││││└ JUST OF TRUE
+││││└ LIST JUST OF TRUE, ...
+││││┌ `any of`
+││││└ <function>
+│││├ IF (elem OF (JUST OF TRUE), xs) THEN (JUST OF TRUE) ELSE (IF (elem OF NOTHING, xs) THEN NOTHING ELSE (JUST OF FALSE))
+││││┌ elem OF (JUST OF TRUE), xs
+│││││┌ JUST OF TRUE
+│││││└ JUST OF TRUE
+│││││┌ elem
+│││││└ <function>
+││││├ CONSIDER list WHEN EMPTY THEN FALSE,
+│││││                 WHEN y FOLLOWED BY ys THEN x EQUALS y OR elem OF x, ys
+││││├ x EQUALS y OR elem OF x, ys
+│││││┌ x EQUALS y
+│││││└ TRUE
+││││├ IF a THEN TRUE ELSE b
+│││││┌ a
+│││││└ TRUE
+││││├ TRUE
+││││└ TRUE
+│││├ JUST OF TRUE
+│││└ JUST OF TRUE
+│││┌ LIST 
+│││└ EMPTY
+││└ LIST JUST OF TRUE
+│└ LIST NOTHING, JUST OF TRUE
+│┌ `all of`
+│└ <function>
+├ IF (elem OF (JUST OF FALSE), xs) THEN (JUST OF FALSE) ELSE (IF (elem OF NOTHING, xs) THEN NOTHING ELSE (JUST OF TRUE))
+│┌ elem OF (JUST OF FALSE), xs
+││┌ JUST OF FALSE
+││└ JUST OF FALSE
+││┌ elem
+││└ <function>
+│├ CONSIDER list WHEN EMPTY THEN FALSE,
+││                 WHEN y FOLLOWED BY ys THEN x EQUALS y OR elem OF x, ys
+│├ x EQUALS y OR elem OF x, ys
+││┌ x EQUALS y
+││└ FALSE
+││┌ elem OF x, ys
+│││┌ elem
+│││└ <function>
+││├ CONSIDER list WHEN EMPTY THEN FALSE,
+│││                 WHEN y FOLLOWED BY ys THEN x EQUALS y OR elem OF x, ys
+││├ x EQUALS y OR elem OF x, ys
+│││┌ x EQUALS y
+│││└ FALSE
+│││┌ elem OF x, ys
+││││┌ elem
+││││└ <function>
+│││├ CONSIDER list WHEN EMPTY THEN FALSE,
+││││                 WHEN y FOLLOWED BY ys THEN x EQUALS y OR elem OF x, ys
+│││├ FALSE
+│││└ FALSE
+││├ IF a THEN TRUE ELSE b
+│││┌ a
+│││└ FALSE
+││├ b
+││└ FALSE
+│├ IF a THEN TRUE ELSE b
+││┌ a
+││└ FALSE
+│├ b
+│└ FALSE
+├ IF (elem OF NOTHING, xs) THEN NOTHING ELSE (JUST OF TRUE)
+│┌ elem OF NOTHING, xs
+││┌ elem
+││└ <function>
+│├ CONSIDER list WHEN EMPTY THEN FALSE,
+││                 WHEN y FOLLOWED BY ys THEN x EQUALS y OR elem OF x, ys
+│├ x EQUALS y OR elem OF x, ys
+││┌ x EQUALS y
+││└ TRUE
+│├ IF a THEN TRUE ELSE b
+││┌ a
+││└ TRUE
+│├ TRUE
+│└ TRUE
+├ NOTHING
+└ NOTHING
+
+jl4> Goodbye!

@@ -1,0 +1,12 @@
+-- traces.l4 - evaluation traces for the report (S3-U and S2-U inputs, given directly).
+IMPORT prelude
+IMPORT daydate
+IMPORT kleene
+IMPORT `t1-dsa-art19`
+IMPORT `t2-dsa-art33`
+
+-- S3-U: 50m EU recipients, designation and notification date unknown.
+#EVALTRACE `VLOP status on` (Date 23 9 2026) (JUST 50000000) NOTHING NOTHING
+
+-- S2-U: staff count unknown, turnover EUR 8m, balance sheet unknown.
+#EVALTRACE `micro or small enterprise` NOTHING (JUST 8000000) NOTHING

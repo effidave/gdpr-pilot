@@ -1,0 +1,15 @@
+-- Minimal reproduction: l4 batch wrapper fails to parse when a MAYBE-typed
+-- parameter is followed by another parameter.
+IMPORT prelude
+
+@export Two parameters, the first optional
+GIVEN a IS A MAYBE NUMBER
+      b IS A BOOLEAN
+GIVETH A BOOLEAN
+DECIDE f IF b
+
+@export Two parameters, the second optional
+GIVEN b IS A BOOLEAN
+      a IS A MAYBE NUMBER
+GIVETH A BOOLEAN
+DECIDE g IF b

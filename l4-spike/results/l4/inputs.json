@@ -1,0 +1,522 @@
+[
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 40000,
+      "average monthly active EU recipients": 15000,
+      "group staff headcount": 3,
+      "annual turnover": 200000,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": false,
+      "content recommender system": false,
+      "forward or share functionality": null,
+      "capable of use in the UK": true,
+      "designated as VLOP": false,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "UK is a target market": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": false,
+        "decided by": "l4-spike author (test data only)",
+        "reason": "Public posting is the principal service, not an ancillary feature"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 40000,
+      "average monthly active EU recipients": 15000,
+      "group staff headcount": 3,
+      "annual turnover": 200000,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": false,
+      "content recommender system": false,
+      "forward or share functionality": null,
+      "capable of use in the UK": true,
+      "designated as VLOP": false,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": null,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Variant S1-U"
+      },
+      "UK is a target market": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 40000,
+      "average monthly active EU recipients": 15000,
+      "group staff headcount": 3,
+      "annual turnover": 200000,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": false,
+      "content recommender system": false,
+      "forward or share functionality": null,
+      "capable of use in the UK": true,
+      "designated as VLOP": false,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "UK is a target market": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 4000000,
+      "average monthly active EU recipients": 2000000,
+      "group staff headcount": null,
+      "annual turnover": 8000000,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": null,
+      "public posting": false,
+      "direct messaging": true,
+      "content recommender system": false,
+      "forward or share functionality": null,
+      "capable of use in the UK": true,
+      "designated as VLOP": false,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "dissemination judgement": {
+        "answer": false,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 4000000,
+      "average monthly active EU recipients": 2000000,
+      "group staff headcount": 60,
+      "annual turnover": 8000000,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": null,
+      "public posting": false,
+      "direct messaging": true,
+      "content recommender system": false,
+      "forward or share functionality": null,
+      "capable of use in the UK": true,
+      "designated as VLOP": false,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": true,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief"
+      },
+      "dissemination judgement": {
+        "answer": false,
+        "decided by": "brief section 6 (provisional)",
+        "reason": "Given in brief: private 1:1 and group chats capped at 256; Recital 14 interpersonal communication"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 20000000,
+      "average monthly active EU recipients": 50000000,
+      "group staff headcount": 800,
+      "annual turnover": null,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": true,
+      "content recommender system": true,
+      "forward or share functionality": true,
+      "capable of use in the UK": true,
+      "designated as VLOP": true,
+      "notification date": "2026-08-01",
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 20000000,
+      "average monthly active EU recipients": 50000000,
+      "group staff headcount": 800,
+      "annual turnover": null,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": true,
+      "content recommender system": true,
+      "forward or share functionality": true,
+      "capable of use in the UK": true,
+      "designated as VLOP": true,
+      "notification date": "2026-03-01",
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": true,
+        "decided by": "l4-spike author (test data only)",
+        "reason": "20m UK MAU"
+      },
+      "UK is a target market": {
+        "answer": true,
+        "decided by": "l4-spike author (test data only)",
+        "reason": "Test data"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": false,
+        "decided by": "l4-spike author (test data only)",
+        "reason": "Public posting is the principal service"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 20000000,
+      "average monthly active EU recipients": 50000000,
+      "group staff headcount": 800,
+      "annual turnover": null,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": true,
+      "content recommender system": true,
+      "forward or share functionality": true,
+      "capable of use in the UK": true,
+      "designated as VLOP": null,
+      "notification date": null,
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 20000000,
+      "average monthly active EU recipients": 50000000,
+      "group staff headcount": 800,
+      "annual turnover": null,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": true,
+      "public posting": true,
+      "direct messaging": true,
+      "content recommender system": true,
+      "forward or share functionality": true,
+      "capable of use in the UK": true,
+      "designated as VLOP": true,
+      "notification date": "2026-03-01",
+      "on register as Category 1": false,
+      "on register as Category 2B": false,
+      "significant number of UK users": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  },
+  {
+    "s": {
+      "evaluation date": "2026-09-23",
+      "monthly active UK users": 2500000,
+      "average monthly active EU recipients": null,
+      "group staff headcount": null,
+      "annual turnover": null,
+      "annual balance sheet total": null,
+      "formerly micro or small": null,
+      "status lost on": null,
+      "stores user content at request": null,
+      "public posting": true,
+      "direct messaging": true,
+      "content recommender system": true,
+      "forward or share functionality": null,
+      "capable of use in the UK": null,
+      "designated as VLOP": null,
+      "notification date": null,
+      "on register as Category 1": null,
+      "on register as Category 2B": null,
+      "significant number of UK users": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "UK is a target market": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "material risk of significant harm": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "hosting service judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "dissemination judgement": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      },
+      "minor ancillary exception": {
+        "answer": null,
+        "decided by": "",
+        "reason": "no judgement given"
+      }
+    }
+  }
+]

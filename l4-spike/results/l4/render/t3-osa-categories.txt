@@ -1,0 +1,59 @@
+SI 2025/226 - Category 1 and Category 2B threshold conditions
+=============================================================
+
+
+Definitions
+
+• OSA category result means a record with:
+    - Category 1 threshold met — MAYBE of BOOLEAN
+    - Category 1 on the register — MAYBE of BOOLEAN
+    - Category 2B threshold met — MAYBE of BOOLEAN
+    - Category 2B on the register — MAYBE of BOOLEAN
+
+
+Provisions
+
+• Category 1 threshold met means any of list of all of list of more than monthly active UK users and 34,000,000 and content recommender system and all of list of more than monthly active UK users and 7,000,000, content recommender system and forward or share functionality.
+
+• Category 2B threshold met means all of list of more than monthly active UK users and 3,000,000 and direct messaging.
+
+• OSA categorisation is a OSA category result with:
+    - Category 1 threshold met — Category 1 threshold met with monthly active UK users, content recommender system and forward or share functionality
+    - Category 1 on the register — on register as Category 1
+    - Category 2B threshold met — Category 2B threshold met with monthly active UK users and direct messaging
+    - Category 2B on the register — on register as Category 2B
+
+
+Prelude
+
+
+Ranges, Sorting & Search
+
+• Elem holds if x is one of list.
+
+
+Imported definitions
+
+
+kleene
+
+
+Three-valued connectives
+
+• All of means:
+    - if JUST with FALSE is one of xs: JUST with FALSE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with TRUE
+
+• Any of means:
+    - if JUST with TRUE is one of xs: JUST with TRUE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with FALSE
+
+
+Three-valued comparisons
+
+• More than is determined by:
+    depending on a:
+    - if it is x: JUST with x is greater than b
+    - if it is NOTHING: NOTHING

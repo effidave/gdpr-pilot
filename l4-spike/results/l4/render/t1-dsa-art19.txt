@@ -1,0 +1,169 @@
+DSA Art 19 - micro and small enterprises
+========================================
+
+
+Definitions
+
+• Section 3 outcome means one of:
+    - Not relevant: not an online platform
+    - Section 3 applies (Art 19(2): designated VLOP)
+    - Section 3 does not apply, except Art 24(3) (micro or small enterprise)
+    - Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status)
+    - Section 3 applies
+
+
+Provisions
+
+• Micro or small enterprise means all of list of less than group staff headcount and 50 and any of list of at most with annual turnover and 10,000,000 and at most with annual balance sheet total and 10,000,000.
+
+• Within 12 months of losing the status means all of list of formerly micro or small and before with evaluation date and months after maybe with 12 and status lost on.
+
+• Section 3 outcome for means possible outcomes with list of PAIR where fst is not with online platform and snd is Not relevant: not an online platform, PAIR where fst is designated as VLOP and snd is Section 3 applies (Art 19(2): designated VLOP), PAIR where fst is micro or small enterprise with group staff headcount, annual turnover and annual balance sheet total and snd is Section 3 does not apply, except Art 24(3) (micro or small enterprise) and PAIR where fst is within 12 months of losing the status with evaluation date, formerly micro or small and status lost on and snd is Section 3 does not apply, except Art 24(3) (12 months after losing micro or small status) and Section 3 applies.
+
+
+Prelude
+
+
+Ranges, Sorting & Search
+
+• Elem holds if x is one of list.
+
+
+Pairs
+
+Definitions:
+
+• PAIR means a record with:
+    - fst — a
+    - snd — b
+
+
+Day & Date Definitions and Helpers
+
+
+Constants
+
+• Months in a year means 12.
+
+
+Date Constructors
+
+• Date means:
+    DATE_FROM_SERIAL with the difference between 1 and the sum of the sum of jan1serial and monthDays and day
+    where:
+    - Jan1serial means the serial number of DATE_FROM_DMY with 1, 1 and year.
+    - MonthDays means Months since year start to days with month and year.
+
+
+Datestamp Constructors
+
+• Day means the serial number of date.
+
+
+Datestamp Math Helpers
+
+• Months since year start to days means:
+    - if m is less than 1: 0
+    - otherwise: Days in month with m and year + Months since year start to days with m and year
+    where:
+    - M equals FLOOR with month − 1.
+
+• Days in month means:
+    - if m is one of 4, 6, 9, or 11: 30
+    - otherwise, if m is 2:
+      - if is leap year with y: 29
+      - otherwise: 28
+    - otherwise: 31
+    where:
+    - M equals 1 + FLOOR with month − 1 − FLOOR with the result of dividing the difference between 1 and month by Months in a year × Months in a year.
+    - Y equals FLOOR with year + FLOOR with the result of dividing month by Months in a year.
+
+
+Attribute Checkers
+
+• Is leap year holds if:
+    any of the following is true:
+    - all of the following are true:
+      - the result of y modulo 4 is 0
+      - the result of y modulo 100 is not 0
+    - the result of y modulo 400 is 0
+    where:
+    - Y means FLOOR with year.
+
+
+Native overloads
+
+• __LT__ holds if Day with a is less than Day with b.
+
+
+Imported definitions
+
+
+kleene
+
+
+Three-valued connectives
+
+• All of means:
+    - if JUST with FALSE is one of xs: JUST with FALSE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with TRUE
+
+• Any of means:
+    - if JUST with TRUE is one of xs: JUST with TRUE
+    - otherwise, if NOTHING is one of xs: NOTHING
+    - otherwise: JUST with FALSE
+
+• Not is determined by:
+    depending on x:
+    - if it is b: JUST with not b
+    - if it is NOTHING: NOTHING
+
+
+Three-valued comparisons
+
+• Less than is determined by:
+    depending on a:
+    - if it is x: JUST with x is less than b
+    - if it is NOTHING: NOTHING
+
+• At most is determined by:
+    depending on a:
+    - if it is x: JUST with x is at most b
+    - if it is NOTHING: NOTHING
+
+
+Dates
+
+• Months after means:
+    Date with the day of d, the sum of m and 1 and y
+    where:
+    - Total equals:
+        the following:
+        - the year of d × 12
+        - plus the month of d
+        - minus 1
+        - plus n
+    - Y means FLOOR with the result of dividing total by 12.
+    - M equals total − y × 12.
+
+• Before is determined by:
+    depending on deadline:
+    - if it is d: JUST with day is less than d
+    - if it is NOTHING: NOTHING
+
+• Months after maybe is determined by:
+    depending on d:
+    - if it is x: JUST with months after with n and x
+    - if it is NOTHING: NOTHING
+
+
+Outcome tables
+
+• Possible outcomes is determined by:
+    depending on rows:
+    - if it is EMPTY: list of the a
+    - if it is r followed by rest:
+      - if fst with r is JUST with TRUE: list of snd with r
+      - otherwise, if fst with r is JUST with FALSE: possible outcomes with rest and the a
+      - otherwise: snd with r followed by possible outcomes with rest and the a
