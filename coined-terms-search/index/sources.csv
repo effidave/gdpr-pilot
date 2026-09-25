@@ -42,3 +42,5 @@ ai,DPV AI,https://w3id.org/dpv/ai#,2,https://w3id.org/dpv/ai
 iptcdst,IPTC Digital Source Type,http://cv.iptc.org/newscodes/digitalsourcetype/,2,http://cv.iptc.org/newscodes/digitalsourcetype/
 airo,AIRO,https://w3id.org/airo#,3,https://w3id.org/airo
 vair,VAIR,https://w3id.org/vair#,3,https://w3id.org/vair
+owl,OWL 2,http://www.w3.org/2002/07/owl#,1,https://www.w3.org/2002/07/owl.ttl http://www.w3.org/2002/07/owl
+rdfs,RDF Schema,http://www.w3.org/2000/01/rdf-schema#,1,https://www.w3.org/2000/01/rdf-schema.ttl http://www.w3.org/2000/01/rdf-schema

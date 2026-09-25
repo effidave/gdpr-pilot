@@ -1,0 +1,46 @@
+prefix,vocabulary,namespace,in_lov,lov_prefixes,lov_latest_version
+dcat,DCAT 3,http://www.w3.org/ns/dcat#,yes,aerdcat;dcat,2025-06-16
+dcatap,DCAT-AP 3,http://data.europa.eu/r5r/,no,,
+adms,ADMS,http://www.w3.org/ns/adms#,yes,adms,2015-07-22
+skos,SKOS,http://www.w3.org/2004/02/skos/core#,yes,skos,2009-08-17
+skosxl,SKOS-XL,http://www.w3.org/2008/05/skos-xl#,yes,skosxl,2009-08-17
+xkos,XKOS,http://rdf-vocabulary.ddialliance.org/xkos#,yes,xkos,2016-03-20
+iso-thes,ISO 25964 SKOS extension,http://purl.org/iso25964/skos-thes#,yes,iso-thes,2015-03-17
+nkos,NKOS Application Profile,http://w3id.org/nkos#,no,,
+nkostype,NKOS KOS Types,http://w3id.org/nkos/nkostype#,no,,
+sh,skos-history,http://purl.org/skos-history/,no,,
+dsv,ISO 25964 dataset versioning,http://purl.org/iso25964/DataSet/Versioning#,no,,
+pav,PAV,http://purl.org/pav/,yes,pav,2014-08-27
+iao,OBO IAO,http://purl.obolibrary.org/obo/,yes,obo,2019-08-06
+sssom,SSSOM,https://w3id.org/sssom/,no,,
+semapv,SEMAPV,https://w3id.org/semapv/vocab/,no,,
+prov,PROV-O,http://www.w3.org/ns/prov#,yes,prov,2015-01-11
+oa,Web Annotation,http://www.w3.org/ns/oa#,yes,oa,2016-11-12
+dqv,DQV,http://www.w3.org/ns/dqv#,yes,dqv,2016-08-26
+duv,DUV,http://www.w3.org/ns/duv#,yes,duv,2016-08-30
+cito,CiTO,http://purl.org/spar/cito/,yes,cito,2018-02-16
+bibo,BIBO,http://purl.org/ontology/bibo/,yes,bibo,2009-11-04
+dcterms,DCMI Terms,http://purl.org/dc/terms/,yes,dcterms,2012-06-13
+dcmitype,DCMI Type,http://purl.org/dc/dcmitype/,yes,dctype,2012-06-13
+eli,ELI,http://data.europa.eu/eli/ontology#,yes,eli,2018-05-23
+odrl,ODRL,http://www.w3.org/ns/odrl/2/,yes,odrl,2017-09-16
+accessright,EU access-right authority table,http://publications.europa.eu/resource/authority/access-right/,no,,
+ssn,SSN,http://www.w3.org/ns/ssn/,yes,ssn;ssno;w3c-ssn,2017-04-17
+sosa,SOSA,http://www.w3.org/ns/sosa/,yes,sosa,2017-04-17
+mls,ML Schema,http://www.w3.org/ns/mls#,yes,mls,2016-10-17
+qb,RDF Data Cube,http://purl.org/linked-data/cube#,yes,qb,2014-07-30
+disco,DDI Discovery,http://rdf-vocabulary.ddialliance.org/discovery#,yes,disco,2013-09-29
+foaf,FOAF,http://xmlns.com/foaf/0.1/,yes,foaf,2014-01-14
+org,ORG,http://www.w3.org/ns/org#,yes,org,2014-04-12
+schema,schema.org,https://schema.org/,yes,schema,2020-03-10
+time,OWL-Time,http://www.w3.org/2006/time#,yes,time,2017-04-06
+doap,DOAP,http://usefulinc.com/ns/doap#,yes,doap,2012-01-04
+rocrate,RO-Crate 1.2 context,https://w3id.org/ro/crate/,no,,
+dpv,DPV core,https://w3id.org/dpv#,yes,dpv,2025-08-01
+risk,DPV RISK,https://w3id.org/dpv/risk#,no,,
+ai,DPV AI,https://w3id.org/dpv/ai#,no,,
+iptcdst,IPTC Digital Source Type,http://cv.iptc.org/newscodes/digitalsourcetype/,no,,
+airo,AIRO,https://w3id.org/airo#,yes,airo,2021-01-20
+vair,VAIR,https://w3id.org/vair#,yes,vair,2023-01-01
+owl,OWL 2,http://www.w3.org/2002/07/owl#,yes,owl,2009-11-15
+rdfs,RDF Schema,http://www.w3.org/2000/01/rdf-schema#,yes,rdfs,2014-02-25

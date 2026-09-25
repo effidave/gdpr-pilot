@@ -8,6 +8,8 @@ Phases 0 and 1 are done (`results/NOTES.md`, `results/calibration.md`). The rule
 
 `index/`: every vocabulary in `context/vocab_jobs.csv`, plus SKOS-XL, DCMI Type and OBO IAO, fetched from its publisher and merged into `index/terms.csv` (7,725 terms with label, definition, domain, range, parents, deprecation, source, tier). `index/profiles.csv` records which terms DCAT-AP 3 and RO-Crate 1.2 name. Sources and problems are in `index/SOURCES.md`.
 
+Status 2026-09-25: steps A to E and G done (`results/report.md`, `results/candidates.csv`, `results/shortlists.md`, `results/lov_coverage.csv`). Step F (optional LOV sweep) was not needed: every term had either a verified candidate or a clear reason to stay coined.
+
 ## B. Triage the 68 coined terms
 
 Sort each term into one of three groups before matching:

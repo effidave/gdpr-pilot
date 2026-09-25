@@ -60,4 +60,5 @@ Total: 7,725 terms, about 95% with a definition.
 - **XKOS has no comments on 39 of 44 terms.** Its definitions are in the XKOS specification text, which Phase 5 reads directly.
 - **DPV's `.ttl` URLs 404**; the namespace IRIs negotiate to the 2.3 release.
 - **SSSOM is LinkML YAML, not RDF.** Classes and slots come from `classes` and `slots`, and enum values from `permissible_values`. Prefixed names (CURIEs) are expanded with the schema's own prefix map, so `sssom:NoTermFound` becomes `https://w3id.org/sssom/NoTermFound`.
+- **The EU access-right table file lists its seven concepts without labels or definitions.** Each concept IRI dereferences on its own (RDF/XML) with `skos:prefLabel` and `skos:definition`; the two values recommended in the report were fetched that way.
 - **DCAT-AP adds no terms of its own** here; it is recorded as a profile, meaning which DCAT, DCMI and ADMS properties it makes mandatory or optional per class. RO-Crate likewise maps names onto schema.org and other terms.
