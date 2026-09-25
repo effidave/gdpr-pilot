@@ -1,0 +1,69 @@
+item,term,kind,group,verdict
+1,oht:Record,class,pattern,Replace
+2,oht:Version,class,pattern,Replace
+3,oht:Change,class,pattern,Keep
+4,oht:Axis,class,pattern,Keep under standard super
+5,oht:OutputSpec,class,pattern,Keep under standard super
+6,oht:Uptake,class,pattern,Keep
+7,oht:NoMatch,class,pattern,Replace
+8,oht:OpenQuestion,class,pattern,Replace
+9,oht:HumanReview,class,pattern,Replace
+10,oht:Session,class,pattern,Replace
+11,oht:family,property,mechanical,Replace
+12,oht:classifies,property,domain or editorial,Keep
+13,oht:purpose,property,mechanical,Keep under standard super
+14,oht:legalStatus,property,domain or editorial,Keep
+15,oht:statusDate,property,mechanical,Keep under standard super
+16,oht:sunsetDate,property,mechanical,Replace
+17,oht:severityEncoding,property,domain or editorial,Keep
+18,oht:hasConcept,property,pattern,Drop
+19,oht:primarySource,property,pattern,Replace
+20,oht:sourceType,property,mechanical,Drop
+21,oht:hasChange,property,mechanical,Keep under standard super
+22,oht:changeType,property,mechanical,Replace
+23,oht:affectsConcept,property,pattern,Keep
+24,oht:officialMapping,property,pattern,Replace
+25,oht:introducedIn,property,pattern,Keep
+26,oht:retiredIn,property,pattern,Keep
+27,oht:hasAxis,property,mechanical,Keep under standard super
+28,oht:axisKind,property,mechanical,Replace
+29,oht:multiValued,property,domain or editorial,Keep
+30,oht:hasFacetValue,property,domain or editorial,Keep under standard super
+31,oht:consequence,property,mechanical,Keep under standard super
+32,oht:hasOutput,property,pattern,Replace
+33,oht:outputType,property,mechanical,Replace
+34,oht:outputAxis,property,domain or editorial,Keep
+35,oht:modality,property,domain or editorial,Keep
+36,oht:legalBasis,property,domain or editorial,Keep
+37,oht:contextDependent,property,domain or editorial,Keep
+38,oht:verbatim,property,pattern,Replace
+39,oht:operationalises,property,domain or editorial,Keep
+40,oht:operationalisedBy,property,domain or editorial,Drop
+41,oht:conflictsWith,property,domain or editorial,Keep
+42,oht:hasUptake,property,pattern,Keep
+43,oht:uptakeKind,property,mechanical,Replace
+44,oht:strength,property,domain or editorial,Keep
+45,oht:mappingRelation,property,pattern,Replace
+46,oht:confidence,property,pattern,Keep
+47,oht:score,property,pattern,Replace
+48,oht:method,property,pattern,Replace
+49,oht:derivationMethod,property,domain or editorial,Keep
+50,oht:reviewed,property,mechanical,Drop
+51,oht:verification,property,domain or editorial,Keep
+52,oht:reviewDue,property,domain or editorial,Keep under standard super
+53,oht:inclusion,property,domain or editorial,Keep
+54,oht:humanReview,property,mechanical,Drop
+55,oht:hasOpenQuestion,property,pattern,Drop
+56,oht:resolution,property,mechanical,Replace
+57,oht:release,property,pattern,Replace
+58,oht:redistributable,property,pattern,Replace
+59,oht:redactions,property,mechanical,Keep under standard super
+60,oht:hasHumanReview,property,mechanical,Drop
+61,oht:reviewStatus,property,mechanical,Replace
+62,oht:toolPath,property,mechanical,Replace
+63,oht:commit,property,mechanical,Keep
+64,oht:session,property,pattern,Drop
+65,oht:archiveStatus,property,mechanical,Replace
+66,oht:transcript,property,pattern,Drop
+67,oht:excerpt,property,pattern,Drop
+68,oht:locator,property,pattern,Replace
