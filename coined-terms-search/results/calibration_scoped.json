@@ -1,0 +1,114 @@
+[
+ {
+  "item": 1,
+  "vocabs": [
+   "aerdcat",
+   "dcat"
+  ],
+  "calls": 6,
+  "rank": 1,
+  "query": "CatalogRecord"
+ },
+ {
+  "item": 2,
+  "vocabs": [
+   "adms",
+   "aerdcat",
+   "dcat"
+  ],
+  "calls": 5,
+  "rank": null,
+  "query": null
+ },
+ {
+  "item": 5,
+  "vocabs": [
+   "mls",
+   "sosa",
+   "ssn",
+   "ssno",
+   "w3c-ssn"
+  ],
+  "calls": 5,
+  "rank": 1,
+  "query": "classifier output"
+ },
+ {
+  "item": 6,
+  "vocabs": [
+   "cito",
+   "duv"
+  ],
+  "calls": 4,
+  "rank": 1,
+  "query": "usage"
+ },
+ {
+  "item": 7,
+  "vocabs": [
+   "xkos"
+  ],
+  "calls": 5,
+  "rank": null,
+  "query": null
+ },
+ {
+  "item": 8,
+  "vocabs": [
+   "oa"
+  ],
+  "calls": 8,
+  "rank": 1,
+  "query": "annotation"
+ },
+ {
+  "item": 10,
+  "vocabs": [
+   "prov",
+   "schema"
+  ],
+  "calls": 4,
+  "rank": 1,
+  "query": "conversation"
+ },
+ {
+  "item": 12,
+  "vocabs": [
+   "disco",
+   "xkos"
+  ],
+  "calls": 4,
+  "rank": 1,
+  "query": "unit of analysis"
+ },
+ {
+  "item": 16,
+  "vocabs": [
+   "schema",
+   "time"
+  ],
+  "calls": 7,
+  "rank": 1,
+  "query": "expires"
+ },
+ {
+  "item": 18,
+  "vocabs": [
+   "schema",
+   "skos"
+  ],
+  "calls": 5,
+  "rank": null,
+  "query": null
+ },
+ {
+  "item": 19,
+  "vocabs": [
+   "cito",
+   "prov"
+  ],
+  "calls": 6,
+  "rank": 1,
+  "query": "cites as authority"
+ }
+]

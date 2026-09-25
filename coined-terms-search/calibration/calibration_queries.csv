@@ -1,0 +1,96 @@
+item,term,type,style,spelling,query
+1,oht:Record,class,a,us,catalog record
+1,oht:Record,class,a,uk,catalogue record
+1,oht:Record,class,a,,metadata record
+1,oht:Record,class,b,,named graph holding one library record statements
+1,oht:Record,class,b,us,record in a catalog describing one resource
+1,oht:Record,class,b,uk,record in a catalogue describing one resource
+1,oht:Record,class,c,us,"""catalog record"""
+1,oht:Record,class,c,uk,"""catalogue record"""
+1,oht:Record,class,d,,registration of a dataset
+2,oht:Version,property,a,,version
+2,oht:Version,property,a,,previous version
+2,oht:Version,property,b,,one published release of a taxonomy
+2,oht:Version,property,b,,published release with stable identifiers across versions
+2,oht:Version,property,c,,"""previous version"""
+2,oht:Version,property,d,,has version
+5,oht:OutputSpec,class,a,,classifier output
+5,oht:OutputSpec,class,a,,output
+5,oht:OutputSpec,class,b,,how a classifier reports a concept
+5,oht:OutputSpec,class,b,,classifier output as probability ordinal or score
+5,oht:OutputSpec,class,c,,"""classifier output"""
+5,oht:OutputSpec,class,d,,procedure output
+6,oht:Uptake,class,a,,usage
+6,oht:Uptake,class,a,,adoption
+6,oht:Uptake,class,b,,evidence that someone uses the scheme
+6,oht:Uptake,class,b,,regulatory citation platform adoption benchmark use
+6,oht:Uptake,class,c,,"""dataset usage"""
+6,oht:Uptake,class,d,,dataset usage
+7,oht:NoMatch,,a,,no match
+7,oht:NoMatch,,a,,no term found
+7,oht:NoMatch,,b,,mapping source concept has no counterpart in target
+7,oht:NoMatch,,b,,source concept has no counterpart in target scheme
+7,oht:NoMatch,,c,,"""no match"""
+7,oht:NoMatch,,d,,mapping negation
+8,oht:OpenQuestion,,a,,question
+8,oht:OpenQuestion,,a,,open question
+8,oht:OpenQuestion,,b,,unresolved editorial point about a record
+8,oht:OpenQuestion,,b,,unresolved editorial question with status and resolution
+8,oht:OpenQuestion,,c,,"""open question"""
+8,oht:OpenQuestion,,d,,annotation motivation
+8,oht:OpenQuestion,,d,,questioning
+10,oht:Session,,a,,conversation
+10,oht:Session,,a,,chat session
+10,oht:Session,,b,,drafting session with a language model
+10,oht:Session,,b,,session with a language model and its transcript
+10,oht:Session,,c,,"""chat transcript"""
+10,oht:Session,,d,,message thread
+12,oht:classifies,property,a,,unit of analysis
+12,oht:classifies,property,a,,analysis unit
+12,oht:classifies,property,b,,kind of unit a scheme sorts
+12,oht:classifies,property,b,,the kind of unit classified such as a content item
+12,oht:classifies,property,c,,"""unit of analysis"""
+12,oht:classifies,property,d,,observation unit
+16,oht:sunsetDate,property,a,uk,expiry date
+16,oht:sunsetDate,property,a,us,expiration date
+16,oht:sunsetDate,property,a,,expires
+16,oht:sunsetDate,property,b,,announced date after which a service ceases
+16,oht:sunsetDate,property,b,,date after which the item is no longer available
+16,oht:sunsetDate,property,c,uk,"""expiry date"""
+16,oht:sunsetDate,property,c,us,"""expiration date"""
+16,oht:sunsetDate,property,d,,end of availability
+18,oht:hasConcept,property,a,,has concept
+18,oht:hasConcept,property,a,,defined term
+18,oht:hasConcept,property,b,,links a concept scheme to each concept in it
+18,oht:hasConcept,property,b,,inverse of in scheme concept membership
+18,oht:hasConcept,property,c,,"""has concept"""
+18,oht:hasConcept,property,d,,has defined term
+19,oht:primarySource,property,a,,primary source
+19,oht:primarySource,property,a,,authoritative source
+19,oht:primarySource,property,b,,the authoritative text that defines the scheme
+19,oht:primarySource,property,b,,cites a work as the authority for a statement
+19,oht:primarySource,property,c,,"""primary source"""
+19,oht:primarySource,property,d,,cites as authority
+1,oht:Record,class,e,us,CatalogRecord
+1,oht:Record,class,e,uk,CatalogueRecord
+2,oht:Version,property,e,,previousVersion
+2,oht:Version,property,e,,hasVersion
+5,oht:OutputSpec,class,e,,hasOutput
+5,oht:OutputSpec,class,e,,OutputSpec
+6,oht:Uptake,class,e,,hasUsage
+7,oht:NoMatch,,e,,NoMatch
+7,oht:NoMatch,,e,,NoTermFound
+8,oht:OpenQuestion,,e,,OpenQuestion
+8,oht:OpenQuestion,,e,,motivatedBy
+10,oht:Session,,e,,Conversation
+12,oht:classifies,property,e,,analysisUnit
+16,oht:sunsetDate,property,e,,sunsetDate
+16,oht:sunsetDate,property,e,uk,expiryDate
+16,oht:sunsetDate,property,e,us,expirationDate
+18,oht:hasConcept,property,e,,hasConcept
+18,oht:hasConcept,property,e,,hasDefinedTerm
+19,oht:primarySource,property,e,,primarySource
+19,oht:primarySource,property,e,,hadPrimarySource
+19,oht:primarySource,property,e,,citesAsAuthority
+8,oht:OpenQuestion,,d,,annotation
+8,oht:OpenQuestion,,e,,Annotation

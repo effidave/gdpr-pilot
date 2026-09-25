@@ -1,0 +1,109 @@
+item,term,type,query
+1,oht:Record,class,catalog record
+1,oht:Record,class,metadata record
+2,oht:Version,class,version
+2,oht:Version,class,release
+3,oht:Change,class,change
+3,oht:Change,class,changeset
+4,oht:Axis,class,facet
+4,oht:Axis,class,dimension
+5,oht:OutputSpec,class,output
+5,oht:OutputSpec,class,classifier
+6,oht:Uptake,class,usage
+6,oht:Uptake,class,adoption
+7,oht:NoMatch,class,no match
+7,oht:NoMatch,class,mapping
+8,oht:OpenQuestion,class,question
+8,oht:OpenQuestion,class,issue
+9,oht:HumanReview,class,review
+9,oht:HumanReview,class,curation
+10,oht:Session,,conversation
+10,oht:Session,,session
+11,oht:family,property,scheme type
+11,oht:family,,kos type
+12,oht:classifies,property,unit of analysis
+12,oht:classifies,property,classifies
+13,oht:purpose,property,purpose
+13,oht:purpose,property,intended use
+14,oht:legalStatus,property,legal status
+14,oht:legalStatus,property,legal force
+15,oht:statusDate,property,status date
+16,oht:sunsetDate,property,expires
+16,oht:sunsetDate,property,end of life
+17,oht:severityEncoding,,severity
+18,oht:hasConcept,property,has concept
+18,oht:hasConcept,property,defined term
+19,oht:primarySource,property,primary source
+19,oht:primarySource,property,authoritative
+20,oht:sourceType,property,source type
+21,oht:hasChange,property,has change
+22,oht:changeType,property,change type
+22,oht:changeType,,obsolescence reason
+23,oht:affectsConcept,property,affected
+24,oht:officialMapping,,correspondence
+24,oht:officialMapping,,mapping set
+25,oht:introducedIn,property,introduced in version
+25,oht:introducedIn,property,first version
+26,oht:retiredIn,property,deprecated
+26,oht:retiredIn,property,obsolete
+27,oht:hasAxis,property,facet
+28,oht:axisKind,,ordinal
+28,oht:axisKind,,level of measurement
+29,oht:multiValued,property,multivalued
+29,oht:multiValued,property,cardinality
+30,oht:hasFacetValue,property,facet value
+30,oht:hasFacetValue,property,classified under
+31,oht:consequence,,consequence
+31,oht:consequence,,impact
+32,oht:hasOutput,property,has output
+33,oht:outputType,property,output type
+33,oht:outputType,,probability
+34,oht:outputAxis,,scale
+35,oht:modality,,modality
+35,oht:modality,property,media type
+36,oht:legalBasis,property,legal basis
+36,oht:legalBasis,property,based on legislation
+37,oht:contextDependent,property,context dependent
+38,oht:verbatim,property,verbatim
+38,oht:verbatim,,quotation
+39,oht:operationalises,property,implements
+39,oht:operationalises,property,operationalizes
+40,oht:operationalisedBy,property,implemented by
+41,oht:conflictsWith,property,conflicts with
+41,oht:conflictsWith,property,contradicts
+42,oht:hasUptake,property,used by
+42,oht:hasUptake,property,usage
+43,oht:uptakeKind,property,usage type
+44,oht:strength,property,strength of evidence
+45,oht:mappingRelation,property,mapping relation
+45,oht:mappingRelation,property,match type
+46,oht:confidence,property,confidence
+47,oht:score,property,confidence score
+47,oht:score,property,similarity score
+48,oht:method,property,mapping justification
+48,oht:method,property,method
+49,oht:derivationMethod,property,derivation
+49,oht:derivationMethod,,paraphrase
+50,oht:reviewed,property,reviewed
+51,oht:verification,property,verification status
+52,oht:reviewDue,property,review date
+52,oht:reviewDue,property,next review
+53,oht:inclusion,property,inclusion criteria
+54,oht:humanReview,property,review status
+55,oht:hasOpenQuestion,property,open question
+56,oht:resolution,property,resolution
+57,oht:release,property,release
+58,oht:redistributable,property,access rights
+58,oht:redistributable,property,redistribution
+59,oht:redactions,property,redaction
+60,oht:hasHumanReview,property,has review
+61,oht:reviewStatus,property,review status
+62,oht:toolPath,property,file path
+62,oht:toolPath,property,repository path
+63,oht:commit,property,commit
+63,oht:commit,property,revision
+64,oht:session,property,session
+65,oht:archiveStatus,property,archive status
+66,oht:transcript,,transcript
+67,oht:excerpt,,excerpt
+68,oht:locator,property,locator
