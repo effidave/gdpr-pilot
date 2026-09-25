@@ -1,0 +1,12 @@
+item,term,coined_definition,expected_iris,note
+1,oht:Record,"a named graph holding one library record; the library's statements are made about this IRI",http://www.w3.org/ns/dcat#CatalogRecord,
+2,oht:Version,"one published release of a taxonomy; concept IRIs stay stable across versions",http://www.w3.org/ns/dcat#version; http://www.w3.org/ns/dcat#previousVersion; http://www.w3.org/ns/dcat#hasVersion; http://www.w3.org/ns/dcat#isVersionOf,any one counts as a hit
+5,oht:OutputSpec,"how a classifier reports a concept (boolean, probability, ordinal, score)",http://www.w3.org/ns/ssn/Output; http://www.w3.org/ns/ssn/hasOutput,
+6,oht:Uptake,"one piece of evidence that someone uses the scheme (regulatory citation, platform adoption, benchmark use)",http://www.w3.org/ns/duv#Usage; http://www.w3.org/ns/duv#hasUsage,
+7,oht:NoMatch,"a mapping association asserting that its source concept has no counterpart in the target scheme",https://w3id.org/sssom/NoTermFound,expected not to be indexed in LOV; tests the gap check
+8,oht:OpenQuestion,"an unresolved editorial point about a record, with a status and later a resolution",http://www.w3.org/ns/oa#questioning; http://www.w3.org/ns/oa#Annotation,oa:questioning is an instance of oa:Motivation so do not filter by type
+10,oht:Session,"a drafting session with a language model, and the transcript it produced",http://schema.org/Conversation; https://schema.org/Conversation,
+12,oht:classifies,"the kind of unit a scheme sorts, such as a harm or a content item",http://rdf-vocabulary.ddialliance.org/discovery#analysisUnit,analogue rather than a fit
+16,oht:sunsetDate,"the announced date after which a scheme or service ceases",http://schema.org/expires; https://schema.org/expires,
+18,oht:hasConcept,"links a concept scheme to each concept in it (inverse of skos:inScheme)",http://schema.org/hasDefinedTerm; https://schema.org/hasDefinedTerm,
+19,oht:primarySource,"the authoritative text that defines the scheme",http://purl.org/spar/cito/citesAsAuthority; http://www.w3.org/ns/prov#hadPrimarySource,

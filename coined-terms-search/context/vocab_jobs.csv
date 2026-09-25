@@ -1,0 +1,42 @@
+job,vocabulary,prefix,namespace,tier_guess,namespace_source,relevant_items
+catalogue records,DCAT 3,dcat,http://www.w3.org/ns/dcat#,1,verified,1;2;57
+catalogue records,DCAT-AP,dcatap,http://data.europa.eu/r5r/,2,memory,1;58
+catalogue records,ADMS,adms,http://www.w3.org/ns/adms#,2,verified,2;14;15
+scheme structure,SKOS,skos,http://www.w3.org/2004/02/skos/core#,1,memory,4;18;30;31;37
+scheme structure,XKOS,xkos,http://rdf-vocabulary.ddialliance.org/xkos#,2,memory,4;7;12;24;41
+scheme structure,ISO 25964 SKOS extension,iso-thes,http://purl.org/iso25964/skos-thes#,3,memory,4;30
+scheme description,NKOS Application Profile,nkos,http://w3id.org/nkos#,3,verified,6;11;39;41
+scheme description,NKOS KOS Types,nkostype,http://w3id.org/nkos/nkostype#,3,verified,11
+versions and changes,skos-history,sh,http://purl.org/skos-history/,3,verified,3;21;22
+versions and changes,ISO 25964 dataset versioning,dsv,http://purl.org/iso25964/DataSet/Versioning#,3,verified,2
+versions and changes,PAV,pav,http://purl.org/pav/,2,memory,25;26;57;63
+versions and changes,OBO IAO obsolescence terms,obo,http://purl.obolibrary.org/obo/,2,memory,22;26
+mappings,SSSOM,sssom,https://w3id.org/sssom/,2,memory,7;45;46;47;48
+mappings,SEMAPV,semapv,https://w3id.org/semapv/vocab/,2,memory,48
+provenance,PROV-O,prov,http://www.w3.org/ns/prov#,1,memory,9;10;19;20;49;50;60;64;66
+provenance,Web Annotation,oa,http://www.w3.org/ns/oa#,1,verified,8;55;56
+quality,DQV,dqv,http://www.w3.org/ns/dqv#,2,memory,44;46;51
+usage,DUV,duv,http://www.w3.org/ns/duv#,2,verified,6;42;43
+citation,CiTO,cito,http://purl.org/spar/cito/,2,verified,6;19;38
+citation,BIBO,bibo,http://purl.org/ontology/bibo/,2,memory,68
+general metadata,DCMI Terms,dcterms,http://purl.org/dc/terms/,1,memory,many
+legal,ELI,eli,http://data.europa.eu/eli/ontology#,2,memory,36;39
+rights,ODRL,odrl,http://www.w3.org/ns/odrl/2/,1,memory,58
+rights,EU access-right authority table,,http://publications.europa.eu/resource/authority/access-right,2,memory,58
+classifiers,SSN,ssn,http://www.w3.org/ns/ssn/,1,verified,5;32;33;34
+classifiers,SOSA,sosa,http://www.w3.org/ns/sosa/,1,verified,5;35
+classifiers,ML Schema,mls,http://www.w3.org/ns/mls#,2,memory,5;33
+statistics,RDF Data Cube,qb,http://purl.org/linked-data/cube#,1,memory,4;27;28
+statistics,DDI Discovery,disco,http://rdf-vocabulary.ddialliance.org/discovery#,3,verified,12
+agents,FOAF,foaf,http://xmlns.com/foaf/0.1/,2,memory,14
+agents,ORG,org,http://www.w3.org/ns/org#,1,memory,14
+general,schema.org,schema,https://schema.org/,2,memory,10;16;18;52
+time,OWL-Time,time,http://www.w3.org/2006/time#,1,memory,15;16;52
+software,DOAP,doap,http://usefulinc.com/ns/doap#,2,memory,62;63
+runs and sessions,RO-Crate,ro-crate,https://w3id.org/ro/crate,2,verified,10;62;63;64
+runs and sessions,PROV-AGENT,,unknown (research paper; find whether a namespace is published),3,verified (paper only),10;64;65;66;67;68
+risk and harm,DPV core,dpv,https://w3id.org/dpv#,2,memory,17;31;36
+risk and harm,DPV RISK extension,risk,https://w3id.org/dpv/risk# (spec also prints https://www.w3id.org/dpv/risk#; confirm),2,verified,31
+risk and harm,DPV AI extension,ai,https://w3id.org/dpv/ai#,2,memory,5;35
+AI-generated content,IPTC Digital Source Type,,http://cv.iptc.org/newscodes/digitalsourcetype/,2,memory,48;49
+AI risk,AIRO and VAIR,airo,https://w3id.org/airo#,3,memory,domain concepts

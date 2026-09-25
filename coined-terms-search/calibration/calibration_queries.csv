@@ -1,0 +1,58 @@
+item,term,style,spelling,type,query
+1,oht:Record,a,both,class,catalog record
+1,oht:Record,a,uk,class,catalogue record
+1,oht:Record,a,both,class,metadata record
+1,oht:Record,b,us,class,record describing a dataset in a catalog
+1,oht:Record,b,uk,class,record describing a dataset in a catalogue
+1,oht:Record,c,us,class,"""catalog record"""
+1,oht:Record,c,uk,class,"""catalogue record"""
+2,oht:Version,a,both,,version
+2,oht:Version,a,both,,previous version
+2,oht:Version,b,both,,published release of a dataset version
+2,oht:Version,b,both,,link to the previous version of a resource
+2,oht:Version,c,both,,"""previous version"""
+2,oht:Version,c,both,,"""has version"""
+5,oht:OutputSpec,a,both,,output
+5,oht:OutputSpec,a,both,,procedure output
+5,oht:OutputSpec,b,both,,output produced by a procedure or sensor
+5,oht:OutputSpec,b,both,,how an algorithm reports its result
+5,oht:OutputSpec,c,both,,"""has output"""
+6,oht:Uptake,a,both,,usage
+6,oht:Uptake,a,both,,dataset usage
+6,oht:Uptake,b,both,,evidence that someone uses the dataset
+6,oht:Uptake,b,both,,usage of a dataset by a consumer
+6,oht:Uptake,c,both,,"""has usage"""
+7,oht:NoMatch,a,both,,no match
+7,oht:NoMatch,a,both,,no term found
+7,oht:NoMatch,b,both,,mapping with no counterpart in target
+7,oht:NoMatch,c,both,,"""no term found"""
+8,oht:OpenQuestion,a,both,,questioning
+8,oht:OpenQuestion,a,both,,annotation motivation
+8,oht:OpenQuestion,b,both,,annotation asking a question about a resource
+8,oht:OpenQuestion,b,both,,unresolved editorial question with a status
+8,oht:OpenQuestion,c,both,,"""annotation motivation"""
+10,oht:Session,a,both,class,conversation
+10,oht:Session,a,both,class,message thread
+10,oht:Session,b,both,class,a conversation made up of messages
+10,oht:Session,b,both,class,transcript of an exchange between participants
+10,oht:Session,c,both,class,"""conversation"""
+12,oht:classifies,a,both,property,analysis unit
+12,oht:classifies,a,both,property,unit of analysis
+12,oht:classifies,b,both,property,the kind of unit being classified
+12,oht:classifies,b,both,property,type of entity a variable describes
+12,oht:classifies,c,both,property,"""unit of analysis"""
+16,oht:sunsetDate,a,both,property,expires
+16,oht:sunsetDate,a,both,property,expiry date
+16,oht:sunsetDate,a,both,property,expiration date
+16,oht:sunsetDate,b,both,property,date after which the item is no longer valid
+16,oht:sunsetDate,c,both,property,"""expiration date"""
+18,oht:hasConcept,a,both,property,defined term
+18,oht:hasConcept,a,both,property,has concept
+18,oht:hasConcept,b,both,property,links a term set to each defined term
+18,oht:hasConcept,b,both,property,links a concept scheme to its concepts
+18,oht:hasConcept,c,both,property,"""has defined term"""
+19,oht:primarySource,a,both,property,primary source
+19,oht:primarySource,a,both,property,cites as authority
+19,oht:primarySource,b,both,property,authoritative source that a work cites
+19,oht:primarySource,b,both,property,primary source from which an entity was derived
+19,oht:primarySource,c,both,property,"""primary source"""
