@@ -47,3 +47,10 @@ From `/vocabulary/info` (latest `issued` date among the versions LOV holds):
 ## Politeness
 
 Every call goes through the cached `call()` in `lov_search.py` with the descriptive User-Agent, at least 1.2 seconds between live calls, and retries with backoff. No errors or rate limiting were seen. Phase 0 and 1 used roughly 230 live calls.
+
+## Adoption metrics in LOV (checked 2026-09-25)
+
+- The REST API has no adoption ranking. `/vocabulary/list` returns only uri, nsp, prefix, titles, versions and artifacts. `/vocabulary/info` has a `datasets` list (dataset name plus occurrences) and `incomRel*` fields, but the incoming-relation fields were empty for dcat, prov, schema and skos.
+- The SPARQL endpoint does carry per-vocabulary figures: `voaf:reusedByVocabularies`, `voaf:reusedByDatasets` and `voaf:occurrencesInDatasets`. One query returns them all (saved to `results/lov_vocab_metrics.json`). 364 of about 1,400 vocabulary rows have a non-zero figure.
+- The figures are stale and unusable as an adoption measure for this task. The dataset counts come from old Linked Open Data crawls (datahub.io dataset names). DCAT has no figures at all; schema.org shows 12 reusing datasets; DUV, DQV, DPV and ML Schema show 0; SSSOM, DCAT-AP and NKOS are not in LOV. The ranking is led by rdf, rdfs, dcterms, dc elements, owl, foaf and skos, which is right but already obvious.
+- `reusedByVocabularies` (how many other LOV vocabularies import or reuse a vocabulary) is the more meaningful of the two, but measures reuse by ontology authors, not by data publishers or consuming tools.
