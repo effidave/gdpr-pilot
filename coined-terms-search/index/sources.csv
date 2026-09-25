@@ -1,0 +1,44 @@
+prefix,vocabulary,namespace,tier_guess,urls
+dcat,DCAT 3,http://www.w3.org/ns/dcat#,1,https://www.w3.org/ns/dcat.ttl
+dcatap,DCAT-AP 3,http://data.europa.eu/r5r/,2,http://data.europa.eu/r5r/ https://semiceu.github.io/DCAT-AP/releases/3.0.0/html/shacl/shapes.ttl
+adms,ADMS,http://www.w3.org/ns/adms#,2,https://www.w3.org/ns/adms.ttl http://www.w3.org/ns/adms
+skos,SKOS,http://www.w3.org/2004/02/skos/core#,1,http://www.w3.org/2004/02/skos/core.rdf
+skosxl,SKOS-XL,http://www.w3.org/2008/05/skos-xl#,1,http://www.w3.org/2008/05/skos-xl.rdf
+xkos,XKOS,http://rdf-vocabulary.ddialliance.org/xkos#,2,http://rdf-vocabulary.ddialliance.org/xkos https://raw.githubusercontent.com/linked-statistics/xkos/master/xkos.ttl
+iso-thes,ISO 25964 SKOS extension,http://purl.org/iso25964/skos-thes#,3,http://purl.org/iso25964/skos-thes
+nkos,NKOS Application Profile,http://w3id.org/nkos#,3,http://w3id.org/nkos http://w3id.org/nkos/nkos.ttl
+nkostype,NKOS KOS Types,http://w3id.org/nkos/nkostype#,3,http://w3id.org/nkos/nkostype
+sh,skos-history,http://purl.org/skos-history/,3,http://purl.org/skos-history/ https://raw.githubusercontent.com/jneubert/skos-history/master/skos-history.ttl
+dsv,ISO 25964 dataset versioning,http://purl.org/iso25964/DataSet/Versioning#,3,http://purl.org/iso25964/DataSet/Versioning
+pav,PAV,http://purl.org/pav/,2,http://purl.org/pav/ https://raw.githubusercontent.com/pav-ontology/pav/master/pav.ttl
+iao,OBO IAO,http://purl.obolibrary.org/obo/,2,http://purl.obolibrary.org/obo/iao.owl
+sssom,SSSOM,https://w3id.org/sssom/,2,https://raw.githubusercontent.com/mapping-commons/sssom/master/src/sssom_schema/schema/sssom_schema.yaml
+semapv,SEMAPV,https://w3id.org/semapv/vocab/,2,https://w3id.org/semapv/vocab/ https://raw.githubusercontent.com/mapping-commons/semantic-mapping-vocabulary/main/semapv.owl
+prov,PROV-O,http://www.w3.org/ns/prov#,1,https://www.w3.org/ns/prov.ttl
+oa,Web Annotation,http://www.w3.org/ns/oa#,1,https://www.w3.org/ns/oa.ttl
+dqv,DQV,http://www.w3.org/ns/dqv#,2,https://www.w3.org/ns/dqv.ttl
+duv,DUV,http://www.w3.org/ns/duv#,2,https://www.w3.org/ns/duv.ttl http://www.w3.org/ns/duv
+cito,CiTO,http://purl.org/spar/cito/,2,http://purl.org/spar/cito https://raw.githubusercontent.com/SPAROntologies/cito/master/docs/current/cito.ttl
+bibo,BIBO,http://purl.org/ontology/bibo/,2,http://purl.org/ontology/bibo/ https://raw.githubusercontent.com/structureddynamics/Bibliographic-Ontology-BIBO/master/bibo.xml.owl
+dcterms,DCMI Terms,http://purl.org/dc/terms/,1,https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
+dcmitype,DCMI Type,http://purl.org/dc/dcmitype/,1,https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.ttl
+eli,ELI,http://data.europa.eu/eli/ontology#,2,http://data.europa.eu/eli/ontology
+odrl,ODRL,http://www.w3.org/ns/odrl/2/,1,https://www.w3.org/ns/odrl/2/ODRL22.ttl
+accessright,EU access-right authority table,http://publications.europa.eu/resource/authority/access-right/,2,http://publications.europa.eu/resource/authority/access-right
+ssn,SSN,http://www.w3.org/ns/ssn/,1,https://www.w3.org/ns/ssn/
+sosa,SOSA,http://www.w3.org/ns/sosa/,1,https://www.w3.org/ns/sosa/
+mls,ML Schema,http://www.w3.org/ns/mls#,2,http://www.w3.org/ns/mls https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl
+qb,RDF Data Cube,http://purl.org/linked-data/cube#,1,http://purl.org/linked-data/cube
+disco,DDI Discovery,http://rdf-vocabulary.ddialliance.org/discovery#,3,http://rdf-vocabulary.ddialliance.org/discovery
+foaf,FOAF,http://xmlns.com/foaf/0.1/,2,http://xmlns.com/foaf/spec/index.rdf
+org,ORG,http://www.w3.org/ns/org#,1,https://www.w3.org/ns/org.ttl
+schema,schema.org,https://schema.org/,2,https://schema.org/version/latest/schemaorg-current-https.ttl
+time,OWL-Time,http://www.w3.org/2006/time#,1,https://www.w3.org/2006/time.ttl
+doap,DOAP,http://usefulinc.com/ns/doap#,2,http://usefulinc.com/ns/doap https://raw.githubusercontent.com/ewilderj/doap/master/schema/doap.rdf
+rocrate,RO-Crate 1.2 context,https://w3id.org/ro/crate/,2,https://w3id.org/ro/crate/1.2/context
+dpv,DPV core,https://w3id.org/dpv#,2,https://w3id.org/dpv
+risk,DPV RISK,https://w3id.org/dpv/risk#,2,https://w3id.org/dpv/risk
+ai,DPV AI,https://w3id.org/dpv/ai#,2,https://w3id.org/dpv/ai
+iptcdst,IPTC Digital Source Type,http://cv.iptc.org/newscodes/digitalsourcetype/,2,http://cv.iptc.org/newscodes/digitalsourcetype/
+airo,AIRO,https://w3id.org/airo#,3,https://w3id.org/airo
+vair,VAIR,https://w3id.org/vair#,3,https://w3id.org/vair
